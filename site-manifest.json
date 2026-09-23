@@ -1,0 +1,50 @@
+{
+  "schema": "PRODUCT_SITE_MANIFEST/1",
+  "packageVersion": "0.3.0",
+  "product": {
+    "name": "Copilot Sales and Service Agent Extensions",
+    "slug": "copilot-sales-service-agent-extensions",
+    "currentRelease": "Sales Evidence for D365 1.0.7"
+  },
+  "purpose": "Customer-safe product overview, install path, readiness check, and official references.",
+  "audience": "Customers, partners, sellers, solution engineers, administrators, and architects evaluating a bounded pilot.",
+  "classification": "customer-viewable",
+  "skin": {
+    "id": "blueprint",
+    "atomicStandardVersion": "0.2.0",
+    "tokenSha256": "75b20d8ce230a4e4ef6db115f3f0a0757ab2d379b51b6effd886c22acdcda996",
+    "shellSha256": "07662a49c939859a62bca46708889c0af0cdc3a97015c6900b3c812642274a79"
+  },
+  "gate": {
+    "type": "none"
+  },
+  "public": false,
+  "status": "local-validated-candidate",
+  "plannedDestination": {
+    "repository": "billwhalenmsft/copilot-sales-service-agent-extensions",
+    "url": "https://billwhalenmsft.github.io/copilot-sales-service-agent-extensions/"
+  },
+  "generatedFiles": [
+    "index.html",
+    "README.md",
+    "robots.txt",
+    "site-manifest.json",
+    "assets/mcaps-se-os-house-mark.svg",
+    "assets/sales-evidence-color.png",
+    "assets/sales-evidence-outline.png"
+  ],
+  "referencedAssets": [
+    "assets/mcaps-se-os-house-mark.svg",
+    "assets/sales-evidence-color.png",
+    "assets/sales-evidence-outline.png"
+  ],
+  "networkDependencies": [],
+  "officialExternalReferences": [
+    "https://learn.microsoft.com/microsoft-sales-copilot/extend-sales-chat-custom-tools",
+    "https://learn.microsoft.com/microsoft-365/copilot/copilot-agent-install",
+    "https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-declarative-agent",
+    "https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-plugins",
+    "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugin-development",
+    "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-manage-plugins"
+  ]
+}

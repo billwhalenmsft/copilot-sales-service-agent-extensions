@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-style-version="0.2.0" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Deploy governed extensions for Microsoft Copilot Sales and Service experiences, starting with a qualified read-only Dynamics 365 Sales workflow.">
+  <title>Copilot Sales and Service Agent Extensions</title>
+  <link rel="icon" href="assets/sales-evidence-color.png">
+  <script>
+    (() => {
+      const requested = new URLSearchParams(location.search).get("scoutTheme");
+      document.documentElement.dataset.theme = requested === "dark" ? "dark" : "light";
+    })();
+  </script>
+  <style>
+    html[data-visual-style="atomic-orbit"] {
+      --cp-bg: #ffffff;
+      --cp-bg-elevated: #f7faff;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f0f5fb;
+      --cp-border: #d4dfed;
+      --cp-border-strong: #71829a;
+      --cp-text: #172b4d;
+      --cp-text-muted: #415775;
+      --cp-text-soft: #506580;
+      --cp-accent: #005a9e;
+      --cp-accent-hover: #004578;
+      --cp-accent-soft: rgba(0, 90, 158, 0.07);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #107c41;
+      --cp-danger: #b42332;
+      --cp-warning: #8a4b00;
+      --cp-link: #005a9e;
+      --cp-shadow: 0 8px 28px rgba(23, 43, 77, 0.10);
+      --cp-overlay: rgba(255, 255, 255, 0.90);
+      --cp-panel: rgba(255, 255, 255, 0.94);
+      --cp-panel-strong: rgba(255, 255, 255, 0.98);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(0, 90, 158, 0.10);
+    }
+    html[data-visual-style="atomic-orbit"][data-theme="dark"] {
+      --cp-bg: #17191c;
+      --cp-bg-elevated: #1b1e22;
+      --cp-surface: #22262b;
+      --cp-surface-soft: #2b3037;
+      --cp-border: #454f5d;
+      --cp-border-strong: #8293a9;
+      --cp-text: #f5f7fa;
+      --cp-text-muted: #c4cedb;
+      --cp-text-soft: #b6c4d7;
+      --cp-accent: #83c3ff;
+      --cp-accent-hover: #b4daff;
+      --cp-accent-soft: rgba(131, 195, 255, 0.10);
+      --cp-accent-fg: #152a40;
+      --cp-success: #70d59a;
+      --cp-danger: #ff9b9b;
+      --cp-warning: #f4c57a;
+      --cp-link: #91caff;
+      --cp-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+      --cp-overlay: rgba(23, 25, 28, 0.94);
+      --cp-panel: rgba(34, 38, 43, 0.94);
+      --cp-panel-strong: rgba(34, 38, 43, 0.98);
+      --cp-sheen: rgba(255, 255, 255, 0.05);
+      --cp-highlight: rgba(131, 195, 255, 0.14);
+    }
+    html[data-visual-style="atomic-orbit"] body {
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+    }
+    html[data-visual-style="atomic-orbit"] :is(h1,h2,h3,.brand,.eyebrow) { letter-spacing: 0; }
+    html[data-visual-style="atomic-orbit"] :is(.card,.reading,.notice,.review-gate) { border-radius: 6px; box-shadow: none; }
+    html[data-visual-style="atomic-orbit"] :is(.host-heading,.masthead,.app-masthead) { border-bottom: 1px solid var(--cp-border); }
+    html[data-visual-style="atomic-orbit"] .brand { color: var(--cp-accent); font-weight: 650; }
+    html[data-visual-style="atomic-orbit"] .hero h1 { font-size: 36px; letter-spacing: 0; }
+    * { box-sizing: border-box; letter-spacing: 0; }
+    html { scroll-padding-top: 96px; scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cp-bg); color: var(--cp-text); font: 16px/1.5 "Segoe UI", Aptos, Calibri, sans-serif; }
+    a { color: var(--cp-link); text-underline-offset: 3px; }
+    a:hover { color: var(--cp-accent-hover); }
+    :focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    button, input, select { font: inherit; color: var(--cp-text); }
+    button, select { min-height: 44px; background: var(--cp-surface); border: 1px solid var(--cp-border-strong); border-radius: 6px; }
+    button { cursor: pointer; padding: 10px 16px; }
+    button:hover { background: var(--cp-accent-soft); }
+    h1, h2, h3 { line-height: 1.2; letter-spacing: 0; overflow-wrap: anywhere; }
+    h1 { font-size: 32px; font-weight: 760; margin: 8px 0 16px; }
+    h2 { font-size: 26px; font-weight: 740; margin: 0 0 20px; }
+    h3 { font-size: 19px; font-weight: 720; margin: 18px 0 10px; }
+    p { margin: 0 0 14px; }
+    p, li, dd, td, a, label { overflow-wrap: anywhere; }
+    ul, ol { padding-left: 22px; }
+    li + li { margin-top: 10px; }
+    .wrap { width: min(1336px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--cp-border); background: var(--cp-surface); }
+    .brand-lockup { display: flex; align-items: center; gap: 14px; color: var(--cp-text); flex: none; }
+    .brand-mark { display: inline-flex; align-items: center; min-height: 32px; }
+    .product-wordmark { font-size: 13px; font-weight: 750; line-height: 1.15; color: var(--cp-accent); max-width: 220px; }
+    .brand-divider { width: 1px; height: 24px; background: var(--cp-border); }
+    .atom-lockup { gap: 7px; font-size: 13px; font-weight: 700; color: var(--cp-accent); }
+    .house-mark { width: 27px; height: 27px; flex: none; }
+    .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; min-height: 76px; padding-block: 10px; }
+    .section-nav { display: flex; flex-wrap: wrap; gap: 18px; justify-content: flex-end; }
+    .section-nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 0; border-bottom: 3px solid var(--cp-surface); font-size: 13px; font-weight: 700; text-decoration: none; color: var(--cp-text-muted); }
+    .section-nav a:hover { color: var(--cp-link); border-bottom-color: var(--cp-link); }
+    .hero { background: var(--cp-surface); border-bottom: 8px solid var(--cp-accent); }
+    .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 36px; align-items: center; padding: 38px 0; }
+    .hero-icon { width: 160px; height: 160px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface-soft); padding: 18px; }
+    html.project-hub[data-visual-style="atomic-orbit"] .hero h1 { max-width: 980px; font-size: 42px; }
+    .hero-summary { max-width: 880px; font-size: 19px; margin-bottom: 12px; }
+    .eyebrow { font-size: 12px; font-weight: 750; color: var(--cp-text-muted); margin: 0 0 8px; text-transform: uppercase; }
+    .hero .eyebrow { color: var(--cp-text); }
+    .muted, small { color: var(--cp-text-muted); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 16px 0 20px; font-size: 13px; font-weight: 700; color: var(--cp-text); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .primary, .secondary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; }
+    .primary { border: 1px solid var(--cp-accent); background: var(--cp-accent); color: var(--cp-accent-fg); }
+    .primary:hover { background: var(--cp-accent-hover); color: var(--cp-accent-fg); border-color: var(--cp-accent-hover); }
+    .secondary { border: 1px solid var(--cp-border-strong); background: var(--cp-surface); color: var(--cp-text); }
+    .secondary:hover { background: var(--cp-accent-soft); color: var(--cp-text); }
+    .content-band { padding: 40px 0; border-bottom: 1px solid var(--cp-border); }
+    .content-band:nth-child(even) { background: var(--cp-bg-elevated); }
+    .section-heading { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: start; margin-bottom: 24px; }
+    .section-heading h2 { margin-bottom: 8px; }
+    .section-summary { font-size: 16px; color: var(--cp-text-muted); margin: 0; }
+    .overview-grid, .channel-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .tile, .channel-card { padding: 20px; border: 1px solid var(--cp-border); border-radius: 6px; background: var(--cp-surface); min-width: 0; }
+    .tile h3:first-child, .channel-card h3:first-child { margin-top: 0; }
+    .tile p:last-child, .channel-card p:last-child { margin-bottom: 0; }
+    .status { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 9px; border: 1px solid var(--cp-border); border-radius: 999px; font-size: 12px; font-weight: 750; }
+    .status-ready { color: var(--cp-success); border-color: var(--cp-success); }
+    .status-next { color: var(--cp-warning); border-color: var(--cp-warning); }
+    .status-design { color: var(--cp-text-muted); }
+    .architecture { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
+    .architecture-step { position: relative; min-height: 180px; padding: 20px; border: 1px solid var(--cp-border); border-top: 4px solid var(--cp-accent); background: var(--cp-surface); }
+    .architecture-step:not(:last-child)::after { position: absolute; top: 50%; right: -13px; z-index: 2; width: 13px; border-top: 2px solid var(--cp-border-strong); content: ""; }
+    .architecture-step span { display: block; margin-bottom: 10px; color: var(--cp-text-muted); font-size: 12px; font-weight: 750; text-transform: uppercase; }
+    .notice { background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-left: 3px solid var(--cp-accent); padding: 16px 20px; margin: 20px 0; border-radius: 6px; }
+    .notice p:last-child { margin-bottom: 0; }
+    .channel-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .channel-tabs button[aria-selected="true"] { border-color: var(--cp-accent); background: var(--cp-accent); color: var(--cp-accent-fg); }
+    .channel-panel { min-height: 170px; padding: 20px; border: 1px solid var(--cp-border); background: var(--cp-surface); }
+    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 22px; margin-top: 20px; }
+    .check-item { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: start; min-height: 44px; padding: 10px; border: 1px solid var(--cp-border); background: var(--cp-surface); }
+    .check-item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--cp-accent); }
+    .progress-track { height: 10px; overflow: hidden; border: 1px solid var(--cp-border); border-radius: 999px; background: var(--cp-surface-soft); }
+    .progress-fill { width: 0; height: 100%; background: var(--cp-success); transition: width .2s ease; }
+    .install-steps { counter-reset: install; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; list-style: none; }
+    .install-steps li { counter-increment: install; padding: 18px; border: 1px solid var(--cp-border); background: var(--cp-surface); }
+    .install-steps li::before { display: grid; width: 30px; height: 30px; margin-bottom: 12px; place-items: center; border-radius: 50%; background: var(--cp-accent); color: var(--cp-accent-fg); content: counter(install); font-weight: 800; }
+    code { font: 13px Consolas, "Courier New", Courier, monospace; overflow-wrap: anywhere; }
+    pre { overflow-x: auto; padding: 16px; border: 1px solid var(--cp-border); background: var(--cp-surface-soft); color: var(--cp-text); }
+    .references { columns: 2; column-gap: 40px; }
+    .references li { break-inside: avoid; }
+    .site-footer { padding: 24px 0; background: var(--cp-bg-elevated); color: var(--cp-text-muted); font-size: 13px; border-top: 1px solid var(--cp-border); }
+    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 30; transform: translateY(-200%); background: var(--cp-accent); color: var(--cp-accent-fg); padding: 12px; }
+    .skip-link:focus { transform: translateY(0); }
+    [hidden] { display: none !important; }
+    @media (max-width: 900px) {
+      .wrap { width: calc(100% - 36px); }
+      .architecture { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .architecture-step::after { display: none; }
+      .channel-grid, .overview-grid, .install-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-inner { grid-template-columns: 1fr 120px; }
+      .hero-icon { width: 110px; height: 110px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 12px; }
+      .site-header { position: static; }
+      .header-inner { align-items: start; }
+      .brand-lockup { width: 100%; flex-wrap: wrap; }
+      .product-wordmark { width: 100%; max-width: none; }
+      .section-nav { justify-content: flex-start; gap: 4px 16px; }
+      .hero-inner { grid-template-columns: 1fr; padding: 26px 0; }
+      .hero-icon { grid-row: 1; width: 84px; height: 84px; }
+      html.project-hub[data-visual-style="atomic-orbit"] .hero h1 { font-size: 32px; }
+      .section-heading, .overview-grid, .channel-grid, .architecture, .checklist, .install-steps { grid-template-columns: 1fr; }
+      .references { columns: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+    @media print {
+      .section-nav, .hero-actions, .channel-tabs, .checklist-controls, .skip-link { display: none; }
+      .site-header { position: static; }
+      .wrap { width: 100%; }
+      .content-band { padding: 20px 0; }
+      .overview-grid, .channel-grid, .architecture, .install-steps { grid-template-columns: 1fr 1fr; }
+      .tile, .channel-card, .architecture-step, .channel-panel, .install-steps li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand-lockup" aria-label="Copilot Sales and Service Agent Extensions by Microsoft and SE OS">
+        <span class="product-wordmark">Copilot Sales and Service Agent Extensions</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span>Microsoft</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-mark atom-lockup" aria-label="SE OS Labs"><img class="house-mark" src="assets/mcaps-se-os-house-mark.svg" width="27" height="27" alt="">SE OS</span>
+      </div>
+      <nav class="section-nav" aria-label="Page sections">
+        <a href="#product">Product</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#channels">Channels</a>
+        <a href="#install">Install</a>
+        <a href="#validate">Validate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow">Governed extension family</p>
+          <h1 id="page-title">Copilot Sales and Service Agent Extensions</h1>
+          <p class="hero-summary">Add customer-owned evidence, policy, and workflow packs to Microsoft Copilot and first-party business agents without replacing the experiences people already use.</p>
+          <div class="hero-meta">
+            <span>Current release: Sales Evidence for D365 v1.0.7</span>
+            <span>Read-only</span>
+            <span>Host-qualified in first-party Sales</span>
+          </div>
+          <div class="hero-actions">
+            <a class="primary" href="#install">Review the install path</a>
+            <a class="secondary" href="#channels">See channel readiness</a>
+          </div>
+        </div>
+        <img class="hero-icon" src="assets/sales-evidence-color.png" width="160" height="160" alt="Sales Evidence extension icon">
+      </div>
+    </section>
+
+    <section class="content-band" id="product">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Product model</p><h2>Install an extension, not another CRM</h2></div>
+          <p class="section-summary">The customer licenses Microsoft 365 Copilot, deploys the first-party agent experiences they choose, and installs governed extension packages for the workflows and data boundaries they want to add.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="tile">
+            <span class="status status-ready">Ready</span>
+            <h3>Additional Copilot agent</h3>
+            <p>The packaged declarative agent can run as its own focused experience inside Microsoft Copilot for a controlled pilot audience.</p>
+          </article>
+          <article class="tile">
+            <span class="status status-ready">Ready</span>
+            <h3>Sales Agent extension</h3>
+            <p>First-party Sales can copy the same agent's tools and knowledge, preserving the familiar seller experience while adding governed customer evidence.</p>
+          </article>
+          <article class="tile">
+            <span class="status status-next">Demo deployed</span>
+            <h3>Cowork plugin</h3>
+            <p>The separate Cowork package, read-only MCP endpoint, OAuth connection, and private demo-admin install are live. A signed-in Cowork conversation remains the final host gate.</p>
+          </article>
+        </div>
+        <div class="notice">
+          <p><strong>What ships today:</strong> one qualified D365 Sales workflow that reads an opportunity, latest note, and latest open task, then returns a human-review-required next-step draft with three direct citations and zero CRM writes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-band" id="architecture">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Where Azure fits</p><h2>Secure execution behind the experience</h2></div>
+          <p class="section-summary">Azure is the reference execution layer for the current release. It is not a second user interface, a data warehouse, or a replacement for Dynamics 365.</p>
+        </div>
+        <div class="architecture" aria-label="Extension architecture flow">
+          <article class="architecture-step"><span>1. Experience</span><h3>Microsoft Copilot and Sales</h3><p>Conversation, confirmation, citations, user assignment, and admin governance.</p></article>
+          <article class="architecture-step"><span>2. Extension package</span><h3>Agent, policy, and API contract</h3><p>Instructions, one bounded tool, OAuth reference, response semantics, and version identity.</p></article>
+          <article class="architecture-step"><span>3. Customer-owned bridge</span><h3>Azure reference implementation</h3><p>Single-tenant authentication, on-behalf-of token exchange, bounded reads, denial handling, Key Vault, and telemetry.</p></article>
+          <article class="architecture-step"><span>4. Systems of record</span><h3>Dynamics 365 and future providers</h3><p>Records remain protected by each signed-in user's permissions and provider-owned identity.</p></article>
+        </div>
+        <div class="notice"><p><strong>Can Azure be replaced?</strong> The current package requires its secure API endpoint. A customer can adapt the bridge to an approved equivalent hosting pattern, but that alternative must preserve the same authentication, authorization, logging, citation, latency, and zero-write tests.</p></div>
+      </div>
+    </section>
+
+    <section class="content-band" id="channels">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Channel readiness</p><h2>One family, independently qualified lanes</h2></div>
+          <p class="section-summary">Choose a channel to see what is ready now. A passing Sales workflow does not automatically qualify Cowork, Service, Field Service, ERP, or another CRM provider.</p>
+        </div>
+        <div class="channel-tabs" role="tablist" aria-label="Extension channels">
+          <button type="button" role="tab" aria-selected="true" aria-controls="panel-copilot" id="tab-copilot" data-panel="copilot">Copilot</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-sales" id="tab-sales" data-panel="sales">Sales</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-cowork" id="tab-cowork" data-panel="cowork">Cowork</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-service" id="tab-service" data-panel="service">Service + Field</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-erp" id="tab-erp" data-panel="erp">ERP</button>
+        </div>
+        <div class="channel-panel" id="panel-copilot" role="tabpanel" aria-labelledby="tab-copilot">
+          <span class="status status-ready">Package ready; live retest pending</span>
+          <h3>Focused declarative agent in Microsoft Copilot</h3>
+          <p>The <code>1.0.7</code> donor is a Microsoft 365 declarative agent with an authenticated API plugin. It can be deployed to a small audience and selected from the Copilot agent rail. The package and backend are ready; the final standalone host retest needs an authenticated pilot page.</p>
+        </div>
+        <div class="channel-panel" id="panel-sales" role="tabpanel" aria-labelledby="tab-sales" hidden>
+          <span class="status status-ready">Host-qualified</span>
+          <h3>Custom tools and knowledge inside first-party Sales</h3>
+          <p>Sales Evidence for D365 `1.0.7` passed two hosted runs with three native citations, attributed telemetry, and an exact zero-write comparison. This is the reference customer pilot lane.</p>
+        </div>
+        <div class="channel-panel" id="panel-cowork" role="tabpanel" aria-labelledby="tab-cowork" hidden>
+          <span class="status status-next">Demo deployed; host proof pending</span>
+          <h3>Skills plus a remote MCP connector</h3>
+          <p>The Cowork <code>1.0.0</code> package passes 59 Microsoft validation rules and is installed privately for the demo admin. Its isolated HTTPS endpoint passed authenticated initialize, tool discovery, and a zero-write refusal test. A delegated Cowork conversation with live D365 citations is still required before host qualification.</p>
+        </div>
+        <div class="channel-panel" id="panel-service" role="tabpanel" aria-labelledby="tab-service" hidden>
+          <span class="status status-design">Designed, not qualified</span>
+          <h3>Customer Service and Field Service expansion packs</h3>
+          <p>Candidate workflows and local contracts exist. Native host integration, customer table authority, delegated access, mobile/dispatcher journeys, citations, and effect receipts remain separate gates.</p>
+        </div>
+        <div class="channel-panel" id="panel-erp" role="tabpanel" aria-labelledby="tab-erp" hidden>
+          <span class="status status-design">Discovery</span>
+          <h3>ERP evidence and workflow expansion</h3>
+          <p>The ERP lane starts only after the exact product, go-live state, authoritative records, integration method, and security model are known. No Finance or Supply Chain capability is claimed by this release.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-band" id="install">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Pilot installation</p><h2>Customer-owned and intentionally bounded</h2></div>
+          <p class="section-summary">A tenant-specific package is generated during deployment because the app identity, OAuth registration, backend URL, and Dynamics environment belong to that customer.</p>
+        </div>
+        <ol class="install-steps">
+          <li><strong>Confirm prerequisites.</strong><br>Microsoft 365 Copilot, D365 permissions, pilot users, customer admins, Azure landing zone, and one authorized opportunity.</li>
+          <li><strong>Configure securely.</strong><br>Copy the customer template, run fail-closed preflight, and verify tenant/subscription identity before provisioning.</li>
+          <li><strong>Provision and deploy.</strong><br>Create the single-tenant app, OAuth registration, secure evidence bridge, monitoring, and validated donor package.</li>
+          <li><strong>Assign narrowly.</strong><br>Approve the exact package and make it available to specific pilot users, not the whole organization.</li>
+          <li><strong>Prove the workflow.</strong><br>Run two fresh conversations, open all three citations, capture telemetry, and compare records before and after.</li>
+          <li><strong>Decide and expand.</strong><br>Continue, hold, or roll back. Add each new workflow or channel only after its own evidence gate passes.</li>
+        </ol>
+        <pre aria-label="Reference deployment commands"><code>customer-preflight.ps1 -EnvironmentFile .\env\.env.&lt;customer&gt; -Phase intake
+atk provision --env &lt;customer&gt; -i false
+atk deploy --env &lt;customer&gt; -i false
+atk publish --env &lt;customer&gt; -i false</code></pre>
+      </div>
+    </section>
+
+    <section class="content-band" id="validate">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Readiness check</p><h2>Know when the pilot can start</h2></div>
+          <p class="section-summary">Use this checklist during intake. It stores nothing and sends nothing; it only summarizes the boxes selected in this browser tab.</p>
+        </div>
+        <div class="checklist-controls" aria-live="polite">
+          <p><strong id="readiness-label">0 of 8 entry checks confirmed</strong></p>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" aria-labelledby="readiness-label"><div class="progress-fill"></div></div>
+        </div>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"><span>Customer authorizes a read-only pilot.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Exact D365 tenant, environment, org URL, and Sales app are known.</span></label>
+          <label class="check-item"><input type="checkbox"><span>One customer opportunity with a readable note and open task is approved.</span></label>
+          <label class="check-item"><input type="checkbox"><span>One to three licensed pilot users and record privileges are confirmed.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Microsoft 365, D365, and Azure administrators are identified.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Azure landing zone, monitoring, cost owner, and network path are approved.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Install/test window and rollback owner are scheduled.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Privacy, retention, support, and incident boundaries are accepted.</span></label>
+        </div>
+        <div class="notice" id="readiness-result"><p><strong>Status:</strong> Intake incomplete. Complete all eight checks before customer provisioning.</p></div>
+      </div>
+    </section>
+
+    <section class="content-band" id="references">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Official references</p><h2>Built on Microsoft extension contracts</h2></div>
+          <p class="section-summary">These public Microsoft sources describe agent installation, Sales extension, Cowork plugins, API plugins, and customer governance.</p>
+        </div>
+        <ul class="references">
+          <li><a href="https://learn.microsoft.com/microsoft-sales-copilot/extend-sales-chat-custom-tools">Extend Sales with custom tools and knowledge</a></li>
+          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/copilot-agent-install">Install agents in Microsoft Copilot</a></li>
+          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-declarative-agent">Declarative agents for Microsoft 365 Copilot</a></li>
+          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-plugins">Plugins for Microsoft 365 Copilot</a></li>
+          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugin-development">Build plugins for Copilot Cowork</a></li>
+          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-manage-plugins">Manage Cowork plugins</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Copilot Sales and Service Agent Extensions</strong> is an accelerator pattern for governed customer pilots. Release status is capability-specific. This page is not a Marketplace listing, licensing quote, production SLA, or authorization to deploy.</p>
+      <p>MCAPS OS | SE OS &middot; Updated September 22, 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const tabs = [...document.querySelectorAll('[role="tab"]')];
+      const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+          panels.forEach((panel) => { panel.hidden = panel.id !== `panel-${tab.dataset.panel}`; });
+        });
+      });
+
+      const checks = [...document.querySelectorAll('.checklist input')];
+      const label = document.getElementById('readiness-label');
+      const progress = document.querySelector('[role="progressbar"]');
+      const fill = document.querySelector('.progress-fill');
+      const result = document.getElementById('readiness-result');
+      const update = () => {
+        const count = checks.filter((item) => item.checked).length;
+        label.textContent = `${count} of ${checks.length} entry checks confirmed`;
+        progress.setAttribute('aria-valuenow', String(count));
+        fill.style.width = `${(count / checks.length) * 100}%`;
+        result.innerHTML = count === checks.length
+          ? '<p><strong>Status:</strong> Intake complete. The customer team can schedule provisioning and validation.</p>'
+          : '<p><strong>Status:</strong> Intake incomplete. Complete all eight checks before customer provisioning.</p>';
+      };
+      checks.forEach((item) => item.addEventListener('change', update));
+    })();
+  </script>
+</body>
+</html>
