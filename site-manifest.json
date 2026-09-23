@@ -1,12 +1,12 @@
 {
   "schema": "PRODUCT_SITE_MANIFEST/1",
-  "packageVersion": "0.3.0",
+  "packageVersion": "0.4.0",
   "product": {
     "name": "Copilot Sales and Service Agent Extensions",
     "slug": "copilot-sales-service-agent-extensions",
     "currentRelease": "Sales Evidence for D365 1.0.7"
   },
-  "purpose": "Customer-safe product overview, install path, readiness check, and official references.",
+  "purpose": "Customer-safe capability showcase, validated-result specimen, visual test plan, install path, readiness check, and official references.",
   "audience": "Customers, partners, sellers, solution engineers, administrators, and architects evaluating a bounded pilot.",
   "classification": "customer-viewable",
   "skin": {

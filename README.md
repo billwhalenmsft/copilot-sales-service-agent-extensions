@@ -1,6 +1,11 @@
 # Copilot Sales and Service Agent Extensions
 
-Customer-safe product and installation overview for the extension family.
+Customer-safe capability and installation overview for the extension family.
+
+The page now leads with the portfolio's ten capability families, concrete Sales,
+Service, Field Service, and Cowork experiences, a sanitized specimen of the
+host-qualified D365 Sales result, and a five-gate visual validation roadmap.
+The detailed execution matrix remains private in the sibling governance folder.
 
 ## Current release
 
