@@ -1,0 +1,55 @@
+{
+  "schema": "PRODUCT_SITE_MANIFEST/1",
+  "packageVersion": "0.7.0",
+  "product": {
+    "name": "Sales Agent Extension Suite",
+    "slug": "copilot-sales-service-agent-extensions",
+    "currentRelease": "Sales Agent Extension Suite 1.0.0 customer-installable candidate"
+  },
+  "purpose": "Plain-English product overview, practical evaluation guide, and separate technical reference for the Sales Agent Extension Suite.",
+  "audience": "Customers, partners, sellers, managers, account teams, solution engineers, administrators, and architects evaluating a bounded pilot.",
+  "classification": "customer-viewable",
+  "languageStandard": "docs/se-os/HUMAN-LANGUAGE-PUBLIC-CONTENT.md",
+  "skin": {
+    "id": "orbital",
+    "atomicStandardVersion": "0.2.0",
+    "tokenSha256": "75b20d8ce230a4e4ef6db115f3f0a0757ab2d379b51b6effd886c22acdcda996",
+    "shellSha256": "07662a49c939859a62bca46708889c0af0cdc3a97015c6900b3c812642274a79"
+  },
+  "gate": {
+    "type": "none"
+  },
+  "public": false,
+  "status": "local-validated-candidate",
+  "plannedDestination": {
+    "repository": "billwhalenmsft/copilot-sales-service-agent-extensions",
+    "url": "https://billwhalenmsft.github.io/copilot-sales-service-agent-extensions/"
+  },
+  "generatedFiles": [
+    "README.md",
+    "enablement.html",
+    "index.html",
+    "privacy.html",
+    "robots.txt",
+    "site-manifest.json",
+    "technical-reference.html",
+    "terms.html",
+    "assets/mcaps-se-os-house-mark.svg",
+    "assets/sales-evidence-color.png",
+    "assets/sales-evidence-outline.png"
+  ],
+  "referencedAssets": [
+    "assets/mcaps-se-os-house-mark.svg",
+    "assets/sales-evidence-color.png",
+    "assets/sales-evidence-outline.png"
+  ],
+  "networkDependencies": [],
+  "officialExternalReferences": [
+    "https://learn.microsoft.com/microsoft-sales-copilot/extend-sales-chat-custom-tools",
+    "https://learn.microsoft.com/microsoft-365/copilot/copilot-agent-install",
+    "https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-declarative-agent",
+    "https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-plugins",
+    "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugin-development",
+    "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-manage-plugins"
+  ]
+}
