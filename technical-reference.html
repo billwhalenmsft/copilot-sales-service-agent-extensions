@@ -1,22 +1,10 @@
 <!doctype html>
-<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-style-version="0.2.0" data-theme="light">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Review the customer-installable 137-workflow Sales Agent Extension Suite, its backendless Microsoft-hosted architecture, and the qualification path for a bounded pilot.">
-  <title>Sales Agent Extension Suite Technical Reference</title>
-  <link rel="icon" href="assets/sales-evidence-color.png">
-  <script>
-    (() => {
-      const param = new URLSearchParams(window.location.search).get("scoutTheme");
-      const theme =
-        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-    })();
-  </script>
-  <style>
-    html[data-visual-style="atomic-orbit"] {
+<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Sales Extension Suite for Copilot: reusable sales agents, Cowork plugins for a controlled pilot, and a deferred Copilot Studio agent.">
+<title>Technical details and readiness | Sales Extension Suite for Copilot</title><link rel="icon" href="assets/sales-evidence-color.png">
+<style>html[data-visual-style="atomic-orbit"] {
       --cp-bg: #ffffff;
       --cp-bg-elevated: #f7faff;
       --cp-surface: #ffffff;
@@ -326,516 +314,106 @@
       .overview-grid, .channel-grid, .architecture, .install-steps { grid-template-columns: 1fr 1fr; }
       .tile, .channel-card, .architecture-step, .channel-panel, .install-steps li { break-inside: avoid; }
     }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand-lockup" aria-label="Sales Agent Extension Suite by Microsoft and SE OS">
-        <span class="product-wordmark">Sales Agent Extension Suite</span>
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span>Microsoft</span>
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-mark atom-lockup"><img class="house-mark" src="assets/mcaps-se-os-house-mark.svg" width="27" height="27" alt="SE OS mark">SE OS</span>
-      </div>
-      <nav class="section-nav" aria-label="Page sections">
-        <a href="#value">Value</a>
-        <a href="#roles">By role</a>
-        <a href="#inventory">Workflow catalog</a>
-        <a href="#proof">Proof</a>
-        <a href="#test-plan">Test it</a>
-        <a href="#install">Deploy</a>
-      </nav>
-    </div>
-  </header>
 
-  <main id="main">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="wrap hero-inner">
-        <div>
-          <p class="eyebrow">One sales suite across Copilot, Sales Agent, and Cowork</p>
-          <h1 id="page-title">Sales Agent Extension Suite</h1>
-          <p class="hero-summary"><strong>Give every seller a digital deal team—and every manager evidence they can trust.</strong> V1 packages 137 governed workflow references into one managed Copilot Studio solution and seven connector-free Cowork packages, without a customer-managed backend. One native data tool is implemented; the other 136 workflows still require host and data-path qualification.</p>
-          <div class="hero-meta">
-            <span>137 packaged workflow references</span>
-            <span>8 directly installable artifacts</span>
-            <span>1 implemented native data tool</span>
-            <span>0 required custom backends</span>
-          </div>
-          <div class="hero-actions">
-            <a class="primary" href="#roles">See value for my role</a>
-            <a class="secondary" href="#inventory">Browse the detailed baseline</a>
-          </div>
-        </div>
-        <div class="hero-signal">
-          <img class="hero-icon" src="assets/sales-evidence-color.png" width="160" height="160" alt="Sales Evidence extension icon">
-          <div><div class="hero-count">137</div><div class="hero-count-label">workflow references packaged for Copilot Studio and Cowork</div></div>
-        </div>
-      </div>
-    </section>
+    .plain-hero { grid-template-columns: minmax(0, 1fr) 150px; }
+    .plain-hero .hero-icon { width: 132px; height: 132px; }
+    .moment-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .moment, .step, .prompt-card, .decision { padding: 20px; border: 1px solid var(--cp-border); background: var(--cp-surface); }
+    .moment { border-top: 4px solid var(--cp-accent); }
+    .moment h3, .step h3, .prompt-card h3 { margin-top: 0; }
+    .moment p, .decision p { color: var(--cp-text-muted); }
+    .step-grid, .decision-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .step-grid { counter-reset: step; }
+    .step { counter-increment: step; }
+    .step::before { display: grid; width: 32px; height: 32px; margin-bottom: 14px; place-items: center; border-radius: 50%; background: var(--cp-accent); color: var(--cp-accent-fg); content: counter(step); font-weight: 800; }
+    .prompt-card blockquote { margin: 14px 0 0; padding: 14px; border-left: 3px solid var(--cp-accent); background: var(--cp-surface-soft); font-weight: 650; }
+    .decision strong { display: block; margin-bottom: 8px; color: var(--cp-accent); }
+    .technical-note { padding: 20px; border: 1px solid var(--cp-border); border-left: 5px solid var(--cp-warning); background: var(--cp-surface-soft); }
+    .policy-copy { max-width: 860px; }
+    .policy-copy .summary { color: var(--cp-text-muted); font-size: 19px; }
+    .policy-copy h2 { margin-top: 34px; }
+    .policy-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+    .guide-list { display: grid; gap: 12px; padding-left: 22px; }
+    .guide-list li { padding-left: 4px; }
+    .guide-list strong { color: var(--cp-text); }
+    .feedback-template { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+    @media (max-width: 900px) { .moment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .hero { padding-block: 16px; } .plain-hero { padding-block: 12px; } .plain-hero .hero-signal { display: none; } .header-inner { min-height: 0; padding-block: 10px; gap: 8px; } .brand-lockup { gap: 8px; font-size: 12px; } .brand-lockup > :not(.product-wordmark) { display: none; } .section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 4px 12px; } .section-nav a { min-height: 32px; padding: 4px 0; } .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .hero-actions a { min-width: 0; padding: 10px 8px; font-size: 14px; text-align: center; } }
 
-    <section class="content-band" id="value">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">The value equation</p><h2>More than feature parity: one operating layer for revenue work</h2></div>
-          <p class="section-summary">The punchline is not “137 prompts.” It is a reusable system that puts customer context, role-specific work, governed action, and proof into the Microsoft experiences people already use.</p>
-        </div>
-        <div class="value-equation" aria-label="Sales Suite value equation">
-          <article class="equation-term"><strong>137</strong><span>Governed workflows</span><p>From account context and call prep through pipeline review, follow-through, service, field work, and lifecycle governance.</p></article>
-          <article class="equation-term"><strong>2</strong><span>Installation choices</span><p>One managed Copilot Studio solution or seven connector-free Cowork packages.</p></article>
-          <article class="equation-term"><strong>1</strong><span>Governed lifecycle</span><p>Doctor, build, preview, verify, upgrade, rollback, and immutable receipts instead of one-off agent installation.</p></article>
-          <article class="equation-term"><strong>0</strong><span>Silent effects by default</span><p>Reads, drafts, and previews stay separate from writes; every consequential action has an explicit approval boundary.</p></article>
-        </div>
-        <p class="value-result">Customer context + role workflow + governed action + proof = more selling capacity, better management visibility, and lower deployment risk.</p>
-        <div class="native-grid" aria-label="Microsoft-native advantages">
-          <article class="native-card advantage-card"><h3>Works where the team already works</h3><p>Sales Agent handles immediate record-grounded moments; Cowork handles durable multi-step work; Copilot stays the common front door.</p></article>
-          <article class="native-card advantage-card"><h3>Evidence travels with the answer</h3><p>Citations, freshness, blockers, and record identity are part of the result—not an audit exercise after the fact.</p></article>
-          <article class="native-card advantage-card"><h3>Managers get a system, not another chat</h3><p>Team pipeline, forecast narrative, rep context, risk, hygiene, and coaching views all use the same governed evidence model.</p></article>
-          <article class="native-card advantage-card"><h3>Admins can prove and reverse it</h3><p>Package validation, identity checks, telemetry, effect receipts, upgrades, and rollback inventory are built into the lifecycle.</p></article>
-          <article class="native-card advantage-card"><h3>Value stays measurable</h3><p>Named-user entitlement, Copilot Credits, package adoption, and useful outcomes remain separate—without invented prices.</p></article>
-        </div>
-        <div class="truth-banner"><strong>Truth boundary</strong><p>All 137 governed workflows are packaged across seven Copilot Studio skills and seven Cowork packages. The managed solution has passed a clean import, native Dataverse connection binding, publish, and synchronization check. One bounded opportunity-context tool is implemented; the other workflows remain customer-pilot candidates until each intended host and data path is qualified.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="roles">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Value by role</p><h2>Lead with the work each person gets back</h2></div>
-          <p class="section-summary">Every role sees the same governed capability system through a different lens. Select a role to filter the complete inventory.</p>
-        </div>
-        <div class="role-grid">
-          <article class="role-card"><h3>Sales representative</h3><p>Start the day prioritized, enter every call prepared, see the shortest path to advance, draft the follow-through, and keep CRM current without clerical drag.</p><span class="role-count"><strong data-role-count="seller">—</strong> relevant capabilities</span><button type="button" data-role-jump="seller">Show seller capabilities</button></article>
-          <article class="role-card"><h3>Sales manager</h3><p>See pipeline reality before the forecast call, coach from evidence rather than anecdotes, catch slips and hygiene debt, and focus each rep on the next move.</p><span class="role-count"><strong data-role-count="manager">—</strong> relevant capabilities</span><button type="button" data-role-jump="manager">Show manager capabilities</button></article>
-          <article class="role-card"><h3>Revenue leader</h3><p>Understand coverage, risk, customer health, expansion, renewal, and repeatable win/loss patterns across the business without flattening nuance.</p><span class="role-count"><strong data-role-count="leader">—</strong> relevant capabilities</span><button type="button" data-role-jump="leader">Show leader capabilities</button></article>
-          <article class="role-card"><h3>Account team</h3><p>Share one cited account picture across sellers, specialists, and customer-success roles; coordinate stakeholder, proof, objection, and renewal work.</p><span class="role-count"><strong data-role-count="account-team">—</strong> relevant capabilities</span><button type="button" data-role-jump="account-team">Show account-team capabilities</button></article>
-          <article class="role-card"><h3>Sales operations and admin</h3><p>Deploy one bounded suite, inspect identity and package health, govern writes, prove zero-effect paths, measure consumption, and roll back cleanly.</p><span class="role-count"><strong data-role-count="operations">—</strong> relevant capabilities</span><button type="button" data-role-jump="operations">Show operations capabilities</button></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-band" id="inventory">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Complete baseline inventory</p><h2>All 37 capabilities, searchable by job and control</h2></div>
-          <p class="section-summary">Each capability names the business outcome, primary Microsoft surface, intended roles, and effect boundary. Select “Test this capability” to carry it into the proof plan.</p>
-        </div>
-        <div class="inventory-shell">
-          <div class="inventory-controls">
-            <div class="inventory-control"><label for="feature-search">Search</label><input id="feature-search" type="search" placeholder="Try pipeline, meeting, account, renewal…" autocomplete="off"></div>
-            <div class="inventory-control"><label for="role-filter">Role</label><select id="role-filter"><option value="all">All roles</option><option value="seller">Sales representative</option><option value="manager">Sales manager</option><option value="leader">Revenue leader</option><option value="account-team">Account team</option><option value="operations">Sales operations and admin</option></select></div>
-            <div class="inventory-control"><label for="surface-filter">Surface</label><select id="surface-filter"><option value="all">All surfaces</option><option value="First-party Sales Agent">Sales Agent</option><option value="Copilot Cowork">Copilot Cowork</option><option value="Microsoft 365 Copilot">Microsoft 365 Copilot</option></select></div>
-            <div class="inventory-control"><label for="effect-filter">Effect</label><select id="effect-filter"><option value="all">All effects</option><option value="read-only">Read only</option><option value="draft-only">Draft only</option><option value="approval-gated">Approval-gated</option><option value="none">Render only</option></select></div>
-          </div>
-          <p class="inventory-summary" id="inventory-summary" aria-live="polite">Loading 37 capabilities…</p>
-          <div class="feature-grid" id="feature-grid"><p class="inventory-empty">The capability inventory requires JavaScript, but no network connection.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-band" id="product">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Expansion runway</p><h2>Ten families extend the suite beyond the baseline</h2></div>
-          <p class="section-summary">Beyond the 37-capability baseline, the governed catalog defines 100 additional Sales, Service, Field, provider, Cowork, and lifecycle workflows. These are a sequenced expansion roadmap—not 100 additional live claims.</p>
-        </div>
-        <div class="portfolio-strip" aria-label="Portfolio composition">
-          <div class="portfolio-stat"><strong>137</strong><span>governed workflows in the full catalog</span></div>
-          <div class="portfolio-stat"><strong>100</strong><span>cataloged expansion workflows</span></div>
-          <div class="portfolio-stat"><strong>10</strong><span>business capability families</span></div>
-          <div class="portfolio-stat"><strong>5</strong><span>governed execution patterns</span></div>
-        </div>
-        <div class="capability-list">
-          <article class="capability-item"><span class="capability-number">01</span><div><h3>Know the account</h3><p>Relationships, technology estate, priorities, whitespace, competitors, references, and change signals.</p><span class="capability-meta">Account intelligence · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">02</span><div><h3>Move the opportunity</h3><p>Evidence gaps, contradictions, next steps, buying committee, decision criteria, proof-to-close, and commercial handoff.</p><span class="capability-meta">Opportunity execution · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">03</span><div><h3>Protect pipeline and forecast</h3><p>Pipeline change, evidence quality, commit readiness, date realism, stage exit, coverage, scenarios, and coaching.</p><span class="capability-meta">Pipeline and forecast · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">04</span><div><h3>Own the meeting loop</h3><p>Context assembly, risk prep, questions, action extraction, CRM drafts, follow-up, decisions, and cadence.</p><span class="capability-meta">Meeting collaboration · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">05</span><div><h3>Orchestrate the seller day</h3><p>Daily priorities, inbox triage, calendar alignment, weekly wrap, mobile debrief, content reuse, experts, and focus.</p><span class="capability-meta">Seller productivity · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">06</span><div><h3>Connect sales and service</h3><p>Case evidence, escalation risk, entitlement context, SLA risk, knowledge, resolution, impact, and renewal signals.</p><span class="capability-meta">Service continuity · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">07</span><div><h3>Equip field teams</h3><p>Work-order prep, technician day, asset history, parts, first-time-fix risk, dispatch, safety, and sales signals.</p><span class="capability-meta">Field Service · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">08</span><div><h3>Unify provider truth</h3><p>Record graph, authority conflicts, customer timeline, freshness, identity confidence, ownership, and schema drift.</p><span class="capability-meta">Cross-provider · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">09</span><div><h3>Put Cowork on durable work</h3><p>Opportunity rooms, territory sweeps, meeting follow-through, case swarms, account refresh, and proof packages.</p><span class="capability-meta">Supervised Cowork · 10 workflows</span></div></article>
-          <article class="capability-item"><span class="capability-number">10</span><div><h3>Govern the lifecycle</h3><p>Provider doctor, install, verify, upgrade, rollback, permission drift, citation integrity, and effect receipts.</p><span class="capability-meta">Lifecycle governance · 10 workflows</span></div></article>
-        </div>
-        <div class="truth-banner"><strong>Truth boundary</strong><p>The 100 expansion workflows are not included as host-qualified features in the baseline release. Each advances only after its own contract, provider, host, citation, negative-path, and effect tests pass.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="experience">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">What it feels like</p><h2>Start with the job, not the system</h2></div>
-          <p class="section-summary">Choose a work mode. Each example shows the human ask, the extension's value, and the boundary that keeps Copilot useful without silently changing a system of record.</p>
-        </div>
-        <div class="experience-shell" data-tabset="experience">
-          <div class="experience-tabs" role="tablist" aria-label="Role experiences">
-            <button type="button" role="tab" aria-selected="true" aria-controls="experience-sales" id="experience-tab-sales" data-tab="sales">Sales Agent</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="experience-service" id="experience-tab-service" data-tab="service">Service Agent</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="experience-field" id="experience-tab-field" data-tab="field">Field Service</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="experience-cowork" id="experience-tab-cowork" data-tab="cowork">Cowork</button>
-          </div>
-          <div class="experience-panel" id="experience-sales" role="tabpanel" aria-labelledby="experience-tab-sales">
-            <div class="experience-prompt"><span class="prompt-label">Ask in Sales Agent</span><p class="prompt-copy">“What is really blocking this opportunity, and what should I do next?”</p><span class="status status-ready">Anchor host-qualified</span></div>
-            <div class="experience-result"><span class="result-label">The extension can deliver</span><h3>A current, cited deal brief instead of a generic answer</h3><ul class="outcome-list"><li>Account and opportunity context</li><li>Contradictions and missing evidence</li><li>Review-ready next-step draft</li><li>Buying committee and decision gaps</li><li>Proof-to-close plan</li><li>Direct links to source records</li></ul><p class="muted">Current proof: one D365 next-step workflow. Broader Sales portfolio remains on the qualification ladder.</p></div>
-          </div>
-          <div class="experience-panel" id="experience-service" role="tabpanel" aria-labelledby="experience-tab-service" hidden>
-            <div class="experience-prompt"><span class="prompt-label">Ask in Service Agent</span><p class="prompt-copy">“Brief this case, show the customer impact, and draft the safest next response.”</p><span class="status status-design">Designed · host proof pending</span></div>
-            <div class="experience-result"><span class="result-label">The portfolio is designed to deliver</span><h3>Continuity from case evidence to customer outcome</h3><ul class="outcome-list"><li>Current case evidence brief</li><li>Escalation and SLA risk signals</li><li>Cited knowledge-answer draft</li><li>Resolution-note draft</li><li>Sales-service continuity view</li><li>Service-to-renewal signal</li></ul><p class="muted">No native Service Agent qualification is claimed yet.</p></div>
-          </div>
-          <div class="experience-panel" id="experience-field" role="tabpanel" aria-labelledby="experience-tab-field" hidden>
-            <div class="experience-prompt"><span class="prompt-label">Ask before dispatch or onsite</span><p class="prompt-copy">“Prepare this work order and tell me what could prevent a first-time fix.”</p><span class="status status-design">Designed · host proof pending</span></div>
-            <div class="experience-result"><span class="result-label">The portfolio is designed to deliver</span><h3>The right context before the truck rolls</h3><ul class="outcome-list"><li>Work-order and asset brief</li><li>Service history and recurring symptoms</li><li>Parts readiness and substitutions</li><li>First-time-fix risk</li><li>Approved safety context</li><li>Field-to-sales handoff draft</li></ul><p class="muted">Field Service records, mobile experience, and dispatcher journeys require separate qualification.</p></div>
-          </div>
-          <div class="experience-panel" id="experience-cowork" role="tabpanel" aria-labelledby="experience-tab-cowork" hidden>
-            <div class="experience-prompt"><span class="prompt-label">Delegate to Cowork</span><p class="prompt-copy">“Review the meeting, opportunity, tasks, and mail; prepare the follow-through package for my approval.”</p><span class="status status-next">Package valid · host proof pending</span></div>
-            <div class="experience-result"><span class="result-label">The extension is designed to coordinate</span><h3>Supervised multi-step work with checkpoints</h3><ul class="outcome-list"><li>Meeting action extraction</li><li>CRM update previews</li><li>Follow-up email draft</li><li>Account-plan refresh</li><li>Case or opportunity swarm</li><li>Immutable effect receipts</li></ul><p class="muted">Seven connector-free Cowork packages carry all 137 workflow references and pass 413 of 413 package checks. Signed-in host use and each live data path still require pilot qualification.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-band" id="proof">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Actual result</p><h2>One workflow, proved end to end</h2></div>
-          <p class="section-summary">This sanitized specimen reflects two completed first-party Sales runs on September 22. It preserves the observed output shape and proof facts without exposing tenant, customer, user, or record identifiers.</p>
-        </div>
-        <div class="proof-layout">
-          <article class="proof-window" aria-label="Validated Sales Agent result specimen">
-            <div class="proof-toolbar"><span>Sales Agent · D365 evidence extension</span><span class="status status-ready">Validated twice</span></div>
-            <div class="proof-body">
-              <div class="proof-prompt">Draft the next step for this opportunity using only current Dynamics 365 evidence. Show every source and do not change any records.</div>
-              <div class="proof-draft"><span class="result-label">Returned</span><h3>Opportunity next-step draft</h3><p>A concise, human-review-required recommendation grounded in the current opportunity, its latest validated note, and its latest open task.</p></div>
-              <div class="evidence-row" aria-label="Three validated citation types">
-                <div class="evidence-item"><strong>Opportunity</strong><span>Current stage and account context</span></div>
-                <div class="evidence-item"><strong>Latest note</strong><span>Validated next-step evidence</span></div>
-                <div class="evidence-item"><strong>Open task</strong><span>Current owner and follow-through</span></div>
-              </div>
-            </div>
-          </article>
-          <aside class="proof-score" aria-label="Hosted proof scorecard">
-            <div class="proof-score-row"><strong>2/2</strong><span>hosted Sales runs returned HTTP 200</span></div>
-            <div class="proof-score-row"><strong>3</strong><span>direct D365 citations rendered per run</span></div>
-            <div class="proof-score-row"><strong>0</strong><span>source-record changes after exact comparison</span></div>
-            <div class="proof-score-row"><strong>1.89–2.02s</strong><span>observed response duration across the final reference runs</span></div>
-          </aside>
-        </div>
-        <div class="notice"><p><strong>What this proves:</strong> the extension can execute inside first-party Sales, retrieve bounded customer evidence under the signed-in user's permissions, render native citations, and preserve a zero-write boundary. It does not prove the remaining 136 workflows or any customer deployment.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="test-plan">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Top-to-bottom test drive</p><h2>Prove every layer before asking people to trust it</h2></div>
-          <p class="section-summary">Start locally, then prove package, runtime, identity, host, evidence, role journey, and operations. Every layer produces an inspectable receipt; no capability advances on narrative alone.</p>
-        </div>
-        <div class="validation-stack" aria-label="Eight-layer extension validation stack">
-          <article class="test-layer"><span class="status status-ready">Pass locally</span><strong>1. Capability contract</strong><p>Exactly 137 workflow references are allocated once across seven skills with role, outcome, evidence, and effect boundaries.</p></article>
-          <article class="test-layer"><span class="status status-ready">Pass locally</span><strong>2. Clean build</strong><p>Doctor, plan, build, verify-local, rollback-preview, and receipt run from one setup surface.</p></article>
-          <article class="test-layer"><span class="status status-ready">413 / 413</span><strong>3. App packages</strong><p>All seven connector-free Cowork packages pass every Microsoft package rule.</p></article>
-          <article class="test-layer"><span class="status status-ready">Clean import</span><strong>4. Managed solution</strong><p>The Copilot Studio solution imports cleanly, binds one native Dataverse connection, publishes, and synchronizes without a customer-managed backend.</p></article>
-          <article class="test-layer"><span class="status status-next">Mixed</span><strong>5. Host experience</strong><p>The reference Sales anchor is proven; the final Copilot Studio conversation and Cowork packages still need signed-in pilot proof.</p></article>
-          <article class="test-layer"><span class="status status-ready">Anchor pass</span><strong>6. Evidence integrity</strong><p>Three provider-owned D365 citations and exact zero-write comparison pass for the reference workflow.</p></article>
-          <article class="test-layer"><span class="status status-next">Pilot gate</span><strong>7. Role journeys</strong><p>Run seller, manager, leader, account-team, and operations golden paths against approved records.</p></article>
-          <article class="test-layer"><span class="status status-next">Customer gate</span><strong>8. Operate and measure</strong><p>Verify telemetry, useful outcomes, consumption, upgrade, rollback, and support in the target tenant.</p></article>
-        </div>
-        <div class="test-lab" id="test-drive" aria-live="polite">
-          <div class="test-lab-header"><div><p class="eyebrow">Selected capability test</p><h3 id="test-capability-name">Account Context</h3><p id="test-capability-meta" class="muted">First-party Sales Agent · Read only</p></div><span class="status status-next">Tenant proof required</span></div>
-          <div class="test-lab-grid">
-            <div class="test-field"><span>Golden prompt</span><p id="test-capability-prompt">Assemble one cited account brief for the authorized account. Show evidence, blockers, human-review state, and the effect receipt. Read only.</p></div>
-            <div class="test-field"><span>Expected result</span><p id="test-capability-expected">A cited account brief across authorized CRM and Microsoft 365 context, with no inferred customer facts.</p></div>
-            <div class="test-field"><span>Pass criteria</span><p>Correct signed-in identity and host; authorized scope only; evidence opens; blockers are explicit; no unexpected effects.</p></div>
-            <div class="test-field"><span>Negative and receipt checks</span><p>Denied, stale, malformed, cross-target, and unapproved-write requests fail closed. Capture package hash, host, telemetry, citations, source comparison, and verdict.</p></div>
-          </div>
-        </div>
-        <h3>Promote Microsoft hosts in five visible gates</h3>
-        <div class="test-rail" aria-label="Five-stage visual test plan">
-          <article class="test-step is-pass"><small>Gate 1 · Pass</small><h3>Sales golden path</h3><p>Two repeated prompts, three citations each, matching D365 forms, telemetry, and exact zero-write comparison.</p></article>
-          <article class="test-step is-next"><small>Gate 2 · Next</small><h3>Standalone Copilot</h3><p>Run the same bounded prompt in Microsoft Copilot and capture response, citations, latency, and no-change evidence.</p></article>
-          <article class="test-step is-next"><small>Gate 3 · Next</small><h3>Cowork delegation</h3><p>Install the connector-free packages, run twice, capture the work item and citations, and verify zero writes.</p></article>
-          <article class="test-step"><small>Gate 4 · Planned</small><h3>Five execution patterns</h3><p>Visually prove evidence-read, cited-draft, supervised multi-step, approval-gated write, and lifecycle operation.</p></article>
-          <article class="test-step"><small>Gate 5 · Planned</small><h3>Service and Field</h3><p>Qualify case and work-order journeys in their native hosts before claiming Service Agent or Field Service readiness.</p></article>
-        </div>
-        <div class="truth-banner"><strong>Release rule</strong><p>A workflow moves from roadmap to ready only when its intended host shows the expected result, every consequential claim has an authorized citation, negative paths fail closed, telemetry is attributable, and source effects match the approved boundary.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="architecture">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Backendless V1</p><h2>Microsoft-hosted execution with one native connection</h2></div>
-          <p class="section-summary">The customer chooses Copilot Studio or Cowork. Neither V1 path requires a customer-managed Azure Function, custom API, MCP server, or custom Entra application.</p>
-        </div>
-        <div class="architecture" aria-label="Extension architecture flow">
-          <article class="architecture-step"><span>1. Choose a host</span><h3>Copilot Studio or Cowork</h3><p>Use one managed Copilot Studio solution or seven connector-free Cowork packages.</p></article>
-          <article class="architecture-step"><span>2. Install the package</span><h3>Seven governed workflow skills</h3><p>All 137 workflow references are allocated exactly once across seven portable skill bundles.</p></article>
-          <article class="architecture-step"><span>3. Bind native access</span><h3>Dataverse current environment</h3><p>The Copilot Studio package uses one native Dataverse connection for a bounded, read-only opportunity context tool.</p></article>
-          <article class="architecture-step"><span>4. Respect authority</span><h3>Customer permissions remain in force</h3><p>Records stay protected by each signed-in person's Dataverse permissions and the customer's own environment controls.</p></article>
-        </div>
-        <div class="notice"><p><strong>No custom backend is required.</strong> Customers may add approved systems or actions later, but those additions must pass their own identity, authorization, evidence, negative-path, and effect tests before use.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="channels">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Channel readiness</p><h2>One family, independently qualified lanes</h2></div>
-          <p class="section-summary">Choose a channel to see what is ready now. A passing Sales workflow does not automatically qualify Cowork, Service, Field Service, ERP, or another CRM provider.</p>
-        </div>
-        <div data-tabset="channels">
-        <div class="channel-tabs" role="tablist" aria-label="Extension channels">
-          <button type="button" role="tab" aria-selected="true" aria-controls="panel-copilot" id="tab-copilot" data-tab="copilot">Copilot</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="panel-sales" id="tab-sales" data-tab="sales">Sales</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="panel-cowork" id="tab-cowork" data-tab="cowork">Cowork</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="panel-service" id="tab-service" data-tab="service">Service + Field</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="panel-erp" id="tab-erp" data-tab="erp">ERP</button>
-        </div>
-        <div class="channel-panel" id="panel-copilot" role="tabpanel" aria-labelledby="tab-copilot" data-panel="copilot">
-          <span class="status status-next">Suite package valid; host proof pending</span>
-          <h3>One managed agent in Copilot Studio</h3>
-          <p>The managed solution contains seven skills, all 137 workflow references, and one bounded native Dataverse tool. Clean import, connection binding, publish, and synchronization pass; conversational pilot proof remains a separate gate.</p>
-        </div>
-        <div class="channel-panel" id="panel-sales" role="tabpanel" aria-labelledby="tab-sales" data-panel="sales" hidden>
-          <span class="status status-ready">Reference anchor host-qualified</span>
-          <h3>Custom tools and knowledge inside first-party Sales</h3>
-          <p>Sales Evidence for D365 <code>1.0.7</code> passed two hosted runs with three native citations, attributed telemetry, and an exact zero-write comparison. The new suite package adds 17 Sales-primary capability definitions, but it has not yet been copied into Sales or host-qualified as a set.</p>
-        </div>
-        <div class="channel-panel" id="panel-cowork" role="tabpanel" aria-labelledby="tab-cowork" data-panel="cowork" hidden>
-          <span class="status status-next">Suite package valid; host proof pending</span>
-          <h3>Seven connector-free skill packages</h3>
-          <p>The seven Cowork packages contain all 137 governed workflow references and pass 413 of 413 package checks. They require no custom connector or OAuth app; customer installation and signed-in host use remain pilot gates.</p>
-        </div>
-        <div class="channel-panel" id="panel-service" role="tabpanel" aria-labelledby="tab-service" data-panel="service" hidden>
-          <span class="status status-design">Designed, not qualified</span>
-          <h3>Customer Service and Field Service expansion packs</h3>
-          <p>Candidate workflows and local contracts exist. Native host integration, customer table authority, delegated access, mobile/dispatcher journeys, citations, and effect receipts remain separate gates.</p>
-        </div>
-        <div class="channel-panel" id="panel-erp" role="tabpanel" aria-labelledby="tab-erp" data-panel="erp" hidden>
-          <span class="status status-design">Discovery</span>
-          <h3>ERP evidence and workflow expansion</h3>
-          <p>The ERP lane starts only after the exact product, go-live state, authoritative records, integration method, and security model are known. No Finance or Supply Chain capability is claimed by this release.</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-band" id="install">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Installation path</p><h2>Choose one Microsoft-hosted path and start with a bounded pilot</h2></div>
-          <p class="section-summary">The release contains eight directly installable artifacts: one managed Copilot Studio solution and seven alternative Cowork packages. The package build requires no tenant changes; import, connection binding, publication, and user assignment remain explicit customer-admin actions.</p>
-        </div>
-        <ol class="install-steps">
-          <li><strong>Choose the host.</strong><br>Use the managed Copilot Studio solution for one governed agent, or install the seven Cowork packages for skills-only use.</li>
-          <li><strong>Confirm prerequisites.</strong><br>Identify the target environment, customer admin, one to three pilot users, required licenses, and approved records.</li>
-          <li><strong>Install natively.</strong><br>Import and bind the Dataverse connection in Copilot Studio, or install the connector-free Cowork ZIPs. No custom backend is provisioned.</li>
-          <li><strong>Assign narrowly.</strong><br>Publish or enable the package only for the approved pilot audience, not the whole organization.</li>
-          <li><strong>Prove the workflow.</strong><br>Run fresh conversations, open the cited records, test denied and malformed requests, and compare records before and after.</li>
-          <li><strong>Decide and expand.</strong><br>Continue, revise, or remove the package. Qualify each additional live data path or action before claiming it ready.</li>
-        </ol>
-        <pre aria-label="Local proof commands"><code>.\setup.ps1 doctor
-      .\setup.ps1 plan
-      .\setup.ps1 build
-      .\setup.ps1 verify-local
-      .\setup.ps1 receipt</code></pre>
-        <div class="notice"><p><strong>Then stop for approval.</strong> Customer-tenant authentication, solution import, native connection binding, publication, audience assignment, Cowork installation, and live record tests are separate gates.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="validate">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Readiness check</p><h2>Know when the pilot can start</h2></div>
-          <p class="section-summary">Use this checklist during intake. It stores nothing and sends nothing; it only summarizes the boxes selected in this browser tab.</p>
-        </div>
-        <div class="checklist-controls" aria-live="polite">
-          <p><strong id="readiness-label">0 of 8 entry checks confirmed</strong></p>
-          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" aria-labelledby="readiness-label"><div class="progress-fill"></div></div>
-        </div>
-        <div class="checklist">
-          <label class="check-item"><input type="checkbox"><span>Customer authorizes a read-only pilot.</span></label>
-          <label class="check-item"><input type="checkbox"><span>Exact D365 tenant, environment, org URL, and Sales app are known.</span></label>
-          <label class="check-item"><input type="checkbox"><span>One customer opportunity with a readable note and open task is approved.</span></label>
-          <label class="check-item"><input type="checkbox"><span>One to three licensed pilot users and record privileges are confirmed.</span></label>
-          <label class="check-item"><input type="checkbox"><span>Microsoft 365, Copilot Studio, and D365 administrators are identified.</span></label>
-          <label class="check-item"><input type="checkbox"><span>The Copilot Studio or Cowork installation path and required licenses are confirmed.</span></label>
-          <label class="check-item"><input type="checkbox"><span>Install/test window and rollback owner are scheduled.</span></label>
-          <label class="check-item"><input type="checkbox"><span>Privacy, retention, support, and incident boundaries are accepted.</span></label>
-        </div>
-        <div class="notice" id="readiness-result"><p><strong>Status:</strong> Intake incomplete. Complete all eight checks before customer provisioning.</p></div>
-      </div>
-    </section>
-
-    <section class="content-band" id="references">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="eyebrow">Official references</p><h2>Built on Microsoft extension contracts</h2></div>
-          <p class="section-summary">These public Microsoft sources describe agent installation, Sales extension, Cowork plugins, API plugins, and customer governance.</p>
-        </div>
-        <ul class="references">
-          <li><a href="https://learn.microsoft.com/microsoft-sales-copilot/extend-sales-chat-custom-tools">Extend Sales with custom tools and knowledge</a></li>
-          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/copilot-agent-install">Install agents in Microsoft Copilot</a></li>
-          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-declarative-agent">Declarative agents for Microsoft 365 Copilot</a></li>
-          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-plugins">Plugins for Microsoft 365 Copilot</a></li>
-          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugin-development">Build plugins for Copilot Cowork</a></li>
-          <li><a href="https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-manage-plugins">Manage Cowork plugins</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <p><strong>Sales Agent Extension Suite</strong> is an accelerator pattern for governed customer pilots. Release status is capability-specific. This page is not a Marketplace listing, licensing quote, production SLA, or authorization to deploy.</p>
-      <p class="policy-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms of use</a></p>
-      <p>MCAPS OS | SE OS &middot; Updated September 30, 2026</p>
-    </div>
-  </footer>
-
-  <script type="application/json" id="capability-data">
-[
-  {"workflow_id":"account-context","label":"Account Context","outcome":"Assemble one cited account brief across CRM and authorized Microsoft 365 context.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"account-plan","label":"Account Plan","outcome":"Create or refresh a review-ready account plan from current customer evidence.","primary_surface":"Copilot Cowork","write_policy":"draft-only"},
-  {"workflow_id":"account-tiering","label":"Account Tiering","outcome":"Prioritize an authorized account book using explicit fit and engagement criteria.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"assign-target-to-sdr","label":"Target Distribution","outcome":"Preview and approve assignment of one lead or contact to the responsible seller or agent.","primary_surface":"Copilot Cowork","write_policy":"approval-gated"},
-  {"workflow_id":"calendar-events","label":"Calendar Events","outcome":"Retrieve CRM-linked meeting history and surface missing account or opportunity links.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"call-follow-up","label":"Call Follow Up","outcome":"Turn reviewed meeting evidence into a customer follow-up draft and internal action summary.","primary_surface":"Copilot Cowork","write_policy":"draft-only"},
-  {"workflow_id":"call-prep","label":"Call Prep","outcome":"Prepare a compact pre-call brief with attendees, account context, recent evidence, and questions.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"close-plan","label":"Close Plan","outcome":"Draft a customer-centered business case and mutual action plan with owners and dates.","primary_surface":"Copilot Cowork","write_policy":"draft-only"},
-  {"workflow_id":"customer-health","label":"Customer Health","outcome":"Summarize relationship, adoption, service, renewal, and commercial health with evidence.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"customer-voice","label":"Customer Voice","outcome":"Retrieve attributable customer statements on a topic from authorized communications.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"daily-briefing","label":"Daily Briefing","outcome":"Prioritize today's meetings, opportunities, messages, and follow-through for one seller.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"deal-advance-gap","label":"Deal Advance Gap","outcome":"Identify the shortest evidence-backed path to advance one opportunity.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"deal-review","label":"Deal Review","outcome":"Review one opportunity for evidence, risk, qualification gaps, and next actions.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"deal-signals","label":"Deal Signals","outcome":"Find material opportunity changes, silence, slips, stakeholder changes, and renewal signals.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"deal-slip-scenario","label":"Deal Slip Scenario","outcome":"Model the impact of a possible deal slip without changing the forecast.","primary_surface":"First-party Sales Agent","write_policy":"draft-only"},
-  {"workflow_id":"draft-outreach","label":"Draft Outreach","outcome":"Draft customer outreach grounded in account evidence and recipient context.","primary_surface":"First-party Sales Agent","write_policy":"draft-only"},
-  {"workflow_id":"expansion-whitespace","label":"Expansion Whitespace","outcome":"Separate observed customer estate from evidence-backed expansion possibilities.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"find-internal-answer","label":"Find Internal Answer","outcome":"Find an approved internal answer, document, policy, or experienced colleague with citations.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"forecast-narrative","label":"Forecast Narrative","outcome":"Draft a forecast narrative that separates CRM forecast state from supporting evidence.","primary_surface":"Copilot Cowork","write_policy":"draft-only"},
-  {"workflow_id":"handle-objection","label":"Handle Objection","outcome":"Prepare an evidence-backed response to a customer objection or competitive concern.","primary_surface":"First-party Sales Agent","write_policy":"draft-only"},
-  {"workflow_id":"inbox-sweep","label":"Inbox Sweep","outcome":"Triage authorized customer mail into account context, priority, and draft follow-through.","primary_surface":"Copilot Cowork","write_policy":"draft-only"},
-  {"workflow_id":"lead-triage","label":"Lead Triage","outcome":"Score and route one inbound lead against approved qualification criteria.","primary_surface":"First-party Sales Agent","write_policy":"draft-only"},
-  {"workflow_id":"log-activity","label":"Log Activity","outcome":"Draft, confirm, create, and verify one completed CRM activity in its owning system.","primary_surface":"First-party Sales Agent","write_policy":"approval-gated"},
-  {"workflow_id":"pipeline-review","label":"Pipeline Review","outcome":"Review pipeline coverage, aging, hygiene, risk, and priority actions for an authorized scope.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"query-activity-history","label":"Activity History","outcome":"Retrieve a normalized CRM activity timeline for an account, contact, or opportunity.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"renewal-radar","label":"Renewal Radar","outcome":"Surface upcoming renewals, evidence-backed risk, timing, and growth context.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"rep-context","label":"Rep Context","outcome":"Prepare a private manager catch-up brief for one seller without inferring performance.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"research-prospect","label":"Research Prospect","outcome":"Research one prospect from approved public and organizational sources with citations.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"schedule-meeting","label":"Schedule Meeting","outcome":"Propose a meeting time and invite, then execute only after exact confirmation.","primary_surface":"Copilot Cowork","write_policy":"approval-gated"},
-  {"workflow_id":"sfdc-hygiene-check","label":"CRM Hygiene Check","outcome":"Audit CRM records for missing, stale, contradictory, or invalid fields without changing them.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"stakeholder-map","label":"Stakeholder Map","outcome":"Map known stakeholders, roles, access, recency, and evidence gaps for one account.","primary_surface":"First-party Sales Agent","write_policy":"read-only"},
-  {"workflow_id":"summarize-conversation-transcript","label":"Conversation Summary","outcome":"Summarize an authorized conversation into decisions, actions, risks, and record context.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"team-pipeline","label":"Team Pipeline","outcome":"Produce an authorized team pipeline rollup with per-owner priorities and evidence.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"using-display-widget","label":"Display Widget","outcome":"Render a structured workflow result without changing its evidence or effect state.","primary_surface":"Microsoft 365 Copilot","write_policy":"none"},
-  {"workflow_id":"voice-profile","label":"Communication Voice Profile","outcome":"Derive a consented, minimized communication-style profile with deletion controls.","primary_surface":"Copilot Cowork","write_policy":"read-only"},
-  {"workflow_id":"weekly-wrap","label":"Weekly Wrap","outcome":"Draft a seller-owned weekly summary of wins, movement, slips, risks, and next week.","primary_surface":"Copilot Cowork","write_policy":"draft-only"},
-  {"workflow_id":"win-loss-review","label":"Win Loss Review","outcome":"Analyze time-valid win and loss evidence for repeatable patterns and contrary evidence.","primary_surface":"Copilot Cowork","write_policy":"read-only"}
-]
-  </script>
-
-  <script>
-    (() => {
-      const capabilities = JSON.parse(document.getElementById('capability-data').textContent);
-      const roleMap = {
-        seller: new Set(['account-context','account-plan','calendar-events','call-follow-up','call-prep','close-plan','customer-health','customer-voice','daily-briefing','deal-advance-gap','deal-review','deal-signals','deal-slip-scenario','draft-outreach','expansion-whitespace','find-internal-answer','handle-objection','inbox-sweep','lead-triage','log-activity','query-activity-history','renewal-radar','research-prospect','schedule-meeting','sfdc-hygiene-check','stakeholder-map','summarize-conversation-transcript','voice-profile','weekly-wrap']),
-        manager: new Set(['account-context','account-plan','account-tiering','assign-target-to-sdr','close-plan','customer-health','customer-voice','deal-advance-gap','deal-review','deal-signals','deal-slip-scenario','expansion-whitespace','forecast-narrative','lead-triage','pipeline-review','query-activity-history','renewal-radar','rep-context','sfdc-hygiene-check','stakeholder-map','summarize-conversation-transcript','team-pipeline','weekly-wrap','win-loss-review']),
-        leader: new Set(['account-tiering','customer-health','deal-signals','deal-slip-scenario','expansion-whitespace','forecast-narrative','pipeline-review','renewal-radar','team-pipeline','win-loss-review']),
-        'account-team': new Set(['account-context','account-plan','calendar-events','call-follow-up','call-prep','close-plan','customer-health','customer-voice','deal-advance-gap','deal-review','draft-outreach','expansion-whitespace','find-internal-answer','handle-objection','query-activity-history','renewal-radar','research-prospect','schedule-meeting','stakeholder-map','summarize-conversation-transcript']),
-        operations: new Set(['assign-target-to-sdr','calendar-events','lead-triage','log-activity','query-activity-history','schedule-meeting','sfdc-hygiene-check','using-display-widget','voice-profile'])
-      };
-      const roleLabels = { seller: 'Seller', manager: 'Manager', leader: 'Leader', 'account-team': 'Account team', operations: 'Operations' };
-      const effectLabels = { 'read-only': 'Read only', 'draft-only': 'Draft only', 'approval-gated': 'Approval-gated', none: 'Render only' };
-      const rolesFor = (workflowId) => Object.entries(roleMap).filter(([, ids]) => ids.has(workflowId)).map(([role]) => role);
-      const featureSearch = document.getElementById('feature-search');
-      const roleFilter = document.getElementById('role-filter');
-      const surfaceFilter = document.getElementById('surface-filter');
-      const effectFilter = document.getElementById('effect-filter');
-      const featureGrid = document.getElementById('feature-grid');
-      const inventorySummary = document.getElementById('inventory-summary');
-
-      Object.entries(roleMap).forEach(([role, ids]) => {
-        const count = document.querySelector(`[data-role-count="${role}"]`);
-        if (count) count.textContent = String(ids.size);
-      });
-
-      const renderInventory = () => {
-        const query = featureSearch.value.trim().toLowerCase();
-        const role = roleFilter.value;
-        const surface = surfaceFilter.value;
-        const effect = effectFilter.value;
-        const filtered = capabilities.filter((capability) => {
-          const roles = rolesFor(capability.workflow_id);
-          const searchable = `${capability.label} ${capability.outcome} ${capability.workflow_id} ${roles.map((item) => roleLabels[item]).join(' ')}`.toLowerCase();
-          return (!query || searchable.includes(query))
-            && (role === 'all' || roles.includes(role))
-            && (surface === 'all' || capability.primary_surface === surface)
-            && (effect === 'all' || capability.write_policy === effect);
-        });
-        inventorySummary.textContent = `${filtered.length} of ${capabilities.length} capabilities shown`;
-        featureGrid.innerHTML = filtered.length ? filtered.map((capability) => {
-          const roles = rolesFor(capability.workflow_id);
-          return `<article class="feature-card"><span class="feature-sequence">Capability ${String(capabilities.indexOf(capability) + 1).padStart(2, '0')}</span><h3>${capability.label}</h3><p>${capability.outcome}</p><div class="feature-tags"><span class="feature-tag">${capability.primary_surface.replace('First-party ', '')}</span><span class="feature-tag">${effectLabels[capability.write_policy]}</span>${roles.map((role) => `<span class="feature-tag">${roleLabels[role]}</span>`).join('')}</div><button type="button" data-test-capability="${capability.workflow_id}">Test this capability</button></article>`;
-        }).join('') : '<p class="inventory-empty">No capability matches these filters.</p>';
-        featureGrid.querySelectorAll('[data-test-capability]').forEach((button) => {
-          button.addEventListener('click', () => {
-            const capability = capabilities.find((item) => item.workflow_id === button.dataset.testCapability);
-            document.getElementById('test-capability-name').textContent = capability.label;
-            document.getElementById('test-capability-meta').textContent = `${capability.primary_surface} · ${effectLabels[capability.write_policy]}`;
-            const action = capability.outcome.charAt(0).toLowerCase() + capability.outcome.slice(1);
-            const boundary = capability.write_policy === 'approval-gated'
-              ? 'Show the exact preview and stop before execution.'
-              : capability.write_policy === 'draft-only'
-                ? 'Return a review-required draft and do not send or save it.'
-                : capability.write_policy === 'read-only'
-                  ? 'Read only and make no source changes.'
-                  : 'Render only and preserve the supplied effect state.';
-            document.getElementById('test-capability-prompt').textContent = `${action} Use only the authorized scope. Show evidence and citations, blockers, human-review state, qualification level, and the effect receipt. ${boundary}`;
-            document.getElementById('test-capability-expected').textContent = `${capability.outcome} The result names its evidence, missing dependencies, review state, and effect boundary.`;
-            document.getElementById('test-drive').scrollIntoView({ behavior: 'smooth', block: 'start' });
-          });
-        });
-      };
-
-      [featureSearch, roleFilter, surfaceFilter, effectFilter].forEach((control) => control.addEventListener('input', renderInventory));
-      document.querySelectorAll('[data-role-jump]').forEach((button) => {
-        button.addEventListener('click', () => {
-          roleFilter.value = button.dataset.roleJump;
-          renderInventory();
-          document.getElementById('inventory').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-      });
-      renderInventory();
-
-      document.querySelectorAll('[data-tabset]').forEach((tabset) => {
-        const tabs = [...tabset.querySelectorAll('[role="tab"]')];
-        const panels = [...tabset.querySelectorAll('[role="tabpanel"]')];
-        tabs.forEach((tab) => {
-          tab.addEventListener('click', () => {
-            tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
-            panels.forEach((panel) => { panel.hidden = panel.dataset.panel !== tab.dataset.tab && panel.id !== `${tabset.dataset.tabset}-${tab.dataset.tab}`; });
-          });
-        });
-      });
-
-      const checks = [...document.querySelectorAll('.checklist input')];
-      const label = document.getElementById('readiness-label');
-      const progress = document.querySelector('[role="progressbar"]');
-      const fill = document.querySelector('.progress-fill');
-      const result = document.getElementById('readiness-result');
-      const update = () => {
-        const count = checks.filter((item) => item.checked).length;
-        label.textContent = `${count} of ${checks.length} entry checks confirmed`;
-        progress.setAttribute('aria-valuenow', String(count));
-        fill.style.width = `${(count / checks.length) * 100}%`;
-        result.innerHTML = count === checks.length
-          ? '<p><strong>Status:</strong> Intake complete. The customer team can schedule provisioning and validation.</p>'
-          : '<p><strong>Status:</strong> Intake incomplete. Complete all eight checks before customer provisioning.</p>';
-      };
-      checks.forEach((item) => item.addEventListener('change', update));
-    })();
-  </script>
-</body>
-</html>
+    .learn-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .learn-card { padding:22px; border:1px solid var(--cp-border); background:var(--cp-surface); min-width:0; }
+    .learn-card h3 { margin-top:0; }
+    .learn-card small,code { overflow-wrap:anywhere; }
+    .learn-lead { max-width:900px; padding-block:36px; }
+    .learn-note { border-left:4px solid var(--cp-warning); padding:16px; background:var(--cp-surface-soft); margin:18px 0; }
+    .demo-controls { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0; }
+    .demo-result { border:2px solid var(--cp-accent); padding:24px; margin:20px 0; }
+    .learn-table { width:100%; border-collapse:collapse; }
+    .learn-table th,.learn-table td { text-align:left; vertical-align:top; padding:12px; border-bottom:1px solid var(--cp-border); }
+    .table-wrap { overflow-x:auto; }
+    .prompt-copy { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; }
+    .learn-status { font-weight:700; min-height:28px; }
+    .learn-step { color:var(--cp-accent); font-weight:700; }
+    select { max-width:100%; padding:8px; }
+    .learn-lead { padding-block:24px; max-width:100%; }
+    .hero h1 { font-size:clamp(30px,4vw,48px); max-width:900px; margin-block:8px 12px; }
+    .hero-summary { max-width:780px; font-size:20px; }
+    .content-band { padding-block:28px; }
+    .quick-demo { border:1px solid var(--cp-border); padding:24px; background:var(--cp-surface); }
+    .quick-choices { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+    button { font:inherit; min-height:44px; padding:10px 16px; cursor:pointer; color:var(--cp-text); background:var(--cp-surface); border:1px solid var(--cp-accent); border-radius:4px; }
+    button[aria-pressed="true"] { color:var(--cp-accent-fg); background:var(--cp-accent); }
+    button:disabled { cursor:default; opacity:.65; }
+    button:focus-visible,summary:focus-visible { outline:3px solid var(--cp-accent); outline-offset:3px; }
+    .quick-result { border-left:4px solid var(--cp-accent); padding:4px 20px; margin:16px 0; }
+    .quick-result h3 { margin-top:8px; }
+    .quick-result li { margin-block:8px; }
+    .quick-prompt { padding:16px; background:var(--cp-surface-soft); }
+    details { margin-block:12px; padding:12px; border:1px solid var(--cp-border); }
+    summary { cursor:pointer; font-weight:700; min-height:32px; }
+    [hidden] { display:none !important; }
+    .site-footer { padding-block:20px; }
+    @media(max-width:800px) { .learn-grid { grid-template-columns:1fr; } }
+    @media(max-width:680px) { .quick-demo { padding:16px; } .quick-choices { display:grid; grid-template-columns:1fr; } .quick-choices button { text-align:left; } .hero-summary { font-size:18px; } .content-band { padding-block:20px; } }
+    @media(max-width:680px) {
+      .comparison thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+      .comparison tr { display:block; margin-block:16px; border:1px solid var(--cp-border); }
+      .comparison th,.comparison td { display:block; }
+      .comparison td::before { display:block; font-weight:700; margin-bottom:4px; }
+      .comparison td:nth-child(2)::before { content:"Microsoft’s starting point"; }
+      .comparison td:nth-child(3)::before { content:"Suite’s reusable pattern"; }
+    }
+    @media print { .demo-controls,button { display:none; } .learn-card { break-inside:avoid; } details > * { display:block !important; } }
+</style></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner">
+<div class="brand-lockup"><span class="product-wordmark">Sales Extension Suite for Copilot</span>
+<span class="brand-divider" aria-hidden="true"></span><span>Bill Whalen | Microsoft</span></div>
+<nav class="section-nav" aria-label="Site pages"><a href="index.html">Try it</a><a href="user-guide.html">Example prompts</a><a href="install.html">Download & install</a></nav></div></header>
+<main id="main"><section class="hero"><div class="wrap learn-lead"><h1>Technical details and readiness</h1></div></section><section class="content-band"><div class="wrap"><h2>Looking for what this does?</h2><p><a href="index.html#try">Try a fictional sales example</a>. This page is for administrators and technical reviewers, not the starting point for sellers.</p>
+<p><strong>Readiness snapshot: October 16, 2026.</strong> Owner testing passed as reported. Final-name import/display and recipient access remain unverified; optional packages still need host testing. Copilot Studio is deferred. Website examples do not run an agent.</p></div></section><section class="content-band"><div class="wrap"><h2>Current release—not the earlier seven-package layout</h2><div class="table-wrap"><table class="learn-table"><caption>Cowork candidate 2.1.3: packaged definitions, not proven live capabilities</caption>
+<thead><tr><th scope="col">Package</th><th scope="col">Role</th><th scope="col">Definitions</th></tr></thead><tbody>
+<tr><th scope="row">Seller Workflows</th><td>Primary</td><td>56</td></tr>
+<tr><th scope="row">Account &amp; Deals</th><td>Primary</td><td>56</td></tr>
+<tr><th scope="row">V-Team Service</th><td>Optional</td><td>11</td></tr>
+<tr><th scope="row">Admin Support</th><td>Optional</td><td>14</td></tr></tbody></table></div>
+<p>All 137 definitions are retained across four packages. The seven older packages are the source layout, not extra releases to install. Final 2.1.3 keeps the consolidation IDs and short names. Do not enable overlapping layouts together. <a href="catalog.html">Browse the complete catalog</a>.</p></div></section><section class="content-band"><div class="wrap"><h2>Open only the detail you need</h2><details id="harness"><summary>Architecture and Copilot Studio status</summary>
+<p>Workflow instructions guide clarification, evidence review, drafts, and handoffs. Approved tools supply live evidence under a verified identity. Instructions grant neither access nor execution authority.</p>
+<p>The GitHub Copilot harness is behind the managed Copilot Studio agent, not another seller application. The full agent has a recorded optional Work IQ connection-reference initialization blocker. The narrower Dataverse proof does not establish full-agent readiness or per-user isolation.</p>
+<p>Dataverse core first: reconcile the release and prove record matching, citations, denied access, missing data, unavailable tools, effective caller permissions, no-effect behavior, usage, and rollback. Import and publish success are not conversation proof.</p></details>
+<details><summary>What local validation proves—and does not</summary>
+<p>The 2.1.3 packages passed 59 Toolkit rules each and 28 targeted tests. Forty selected local Sales and Account Intelligence unit tests passed on October 16. These cover overlapping components, not forty additional host scenarios.</p>
+<p>The final-name revision passed four consolidation tests and 59 Toolkit rules per package (236 total). All 137 workflow files, icons, IDs, version and permissions match the earlier 2.1.3 archives; only full manifest names/descriptions and ZIP filenames changed. New hashes identify these bytes.</p>
+<p>The owner reported all test cases passed before that cleanup; exact tested version and detailed scope were not supplied. This is owner attestation, not independent execution evidence. Final import/display verification, optional-package host tests and each recipient's own permissions remain open. A definition count is not a live-capability count.</p></details>
+<details id="business-context"><summary>Later enhancements: Work IQ and Salesforce</summary>
+<p>Work IQ is deferred unless a measured core gap requires it. Business skills are governed natural-language instructions, not executable code or directly interchangeable Cowork entries. The Dataverse semantic model is not a Power BI semantic model; the referenced preview guidance notes no new-model creation and no model ALM support. Tenant availability and current limits require revalidation before use.</p>
+<p id="salesforce"><strong>Salesforce: planned, not qualified.</strong> A Dataverse test does not establish Salesforce support. Salesforce-target pilots require separately authorized sandbox, identity, mapping, source-link, no-effect, and rollback tests.</p>
+<p><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-customize">Microsoft: customize and share</a> · <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins">Microsoft: admin deployment</a> · <a href="https://learn.microsoft.com/en-us/dynamics365/sales/use-copilot-cowork-sales-skills">Microsoft: sales in cowork</a> · <a href="https://learn.microsoft.com/en-us/dynamics365/sales/faqs-sales-agent">Microsoft: sales agent versus cowork</a> · <a href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/business-applications-work-iq">Microsoft: business applications</a> · <a href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-business-skill-overview">Microsoft: business skills</a> · <a href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/semantic-model-overview">Microsoft: semantic model</a></p></details>
+<details><summary>Data access, effects, and pilot expansion</summary>
+<p>Notes-only tasks need no CRM connection. Live tasks need exact account/record scope, approved sources, verified identity, and source dates. Unknown or denied evidence stays unknown; no cross-account fallback.</p>
+<p>Sending, saving, scheduling, assignment, CRM changes, authentication, deployment, and publication require their own supported path and explicit approval. Natural-language instructions are not security controls.</p>
+<p>Qualify the internal pilot first. Reuse its versioned artifacts and tests with customers only after customer-specific access and scenario approval. A maker-owned connection does not prove another person's isolation.</p></details></div></section></main>
+<footer class="site-footer"><div class="wrap"><p>Built by Bill Whalen | Microsoft. Independent preview accelerator; not a production or universal capability claim.</p>
+<p><strong>Website 0.14.0 · Cowork packages V2.1.3.</strong> Controlled evaluation release. Recipient access and optional-package host testing remain separate checks.</p>
+<p class="policy-links"><a href="compare.html">What this adds</a><a href="enablement.html">Release to your team</a><a href="catalog.html">All included agents</a><a href="test.html">Pilot test plan</a><a href="demo.html">Guided walkthrough</a><a href="technical-reference.html" aria-current="page">Technical details &amp; readiness</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p></div></footer>
+</body></html>

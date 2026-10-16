@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-style-version="0.2.0" data-theme="light">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="Terms of use for the Sales Agent Extension Suite accelerator."><title>Terms of Use | Sales Agent Extension Suite</title><link rel="icon" href="assets/sales-evidence-color.png">
-  <script>(() => { const param = new URLSearchParams(window.location.search).get("scoutTheme"); const theme = param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", theme); })();</script>
-  <style>html[data-visual-style="atomic-orbit"] {
+<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Sales Extension Suite for Copilot: reusable sales agents, Cowork plugins for a controlled pilot, and a deferred Copilot Studio agent.">
+<title>Terms of use | Sales Extension Suite for Copilot</title><link rel="icon" href="assets/sales-evidence-color.png">
+<style>html[data-visual-style="atomic-orbit"] {
       --cp-bg: #ffffff;
       --cp-bg-elevated: #f7faff;
       --cp-surface: #ffffff;
@@ -332,31 +333,70 @@
     .policy-copy .summary { color: var(--cp-text-muted); font-size: 19px; }
     .policy-copy h2 { margin-top: 34px; }
     .policy-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+    .guide-list { display: grid; gap: 12px; padding-left: 22px; }
+    .guide-list li { padding-left: 4px; }
+    .guide-list strong { color: var(--cp-text); }
+    .feedback-template { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
     @media (max-width: 900px) { .moment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .plain-hero .hero-signal { position: static; justify-items: start; margin-top: 20px; } }
-</style>
-</head>
-<body>  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand-lockup" aria-label="Sales Agent Extension Suite by Microsoft and SE OS">
-        <span class="product-wordmark">Sales Agent Extension Suite</span><span class="brand-divider" aria-hidden="true"></span><span>Microsoft</span><span class="brand-divider" aria-hidden="true"></span><span class="brand-mark atom-lockup"><img class="house-mark" src="assets/mcaps-se-os-house-mark.svg" width="27" height="27" alt="SE OS mark">SE OS</span>
-      </div>
-      <nav class="section-nav" aria-label="Site pages">        <a href="index.html">Overview</a>
-        <a href="enablement.html">Get started</a>
-        <a href="technical-reference.html">Technical reference</a></nav>
-    </div>
-  </header>
-  <main id="main"><section class="content-band"><div class="wrap policy-copy">
-    <p class="eyebrow">Sales Agent Extension Suite V1</p><h1>Terms of use</h1>
-    <p class="summary">Terms for evaluating and operating the customer-installable Sales Agent Extension Suite accelerator.</p>
-    <div class="notice"><p><strong>Evaluation accelerator:</strong> V1 is an accelerator for governed customer pilots. It is not a Microsoft product entitlement, Marketplace certification, production SLA, or promise that every workflow is qualified for every tenant.</p></div>
-    <h2>Permitted use</h2><p>Use the packages in an authorized Microsoft 365 and Power Platform tenant for internal evaluation, controlled pilots, and approved implementation work. Administrators are responsible for tenant policy, licensing, capacity, data residency, connector approval, permissions, audience assignment, and support ownership.</p>
-    <h2>Installation</h2><p>The default Copilot Studio deployment imports one managed solution. The alternative Copilot Cowork deployment installs seven skills-only packages. Neither path requires a customer-managed Azure Function, custom API, or external MCP runtime.</p>
-    <h2>Customer configuration</h2><p>Live data access depends on native tools and connections selected by the customer. Customers must review each connection, assign least privilege, authorize test records, and validate results and effects before expanding an audience.</p>
-    <h2>Qualification</h2><p>Package validation proves structural compliance, not business accuracy or live host qualification. A workflow is ready for production-shaped use only when its exact host, provider, citation, negative-path, metering, and effect tests pass in the target environment.</p>
-    <h2>External effects</h2><p>No conversational request may bypass approval requirements. Writes, sends, schedules, assignments, publications, purchases, deployments, and destructive actions require the owning system's controls and a verifiable receipt.</p>
-    <h2>No warranty</h2><p>The accelerator is provided for evaluation and implementation planning without warranties or guarantees. Validate all outputs before relying on them for customer, commercial, operational, safety, legal, financial, or regulatory decisions.</p>
-    <h2>Removal</h2><p>Disable assigned audiences before uninstalling. Remove only the managed solution or Cowork package IDs recorded by the installation receipt, and preserve any customer-owned records or shared connections.</p><p><strong>Effective:</strong> September 29, 2026</p>
-  </div></section></main>  <footer class="site-footer"><div class="wrap"><p><strong>Sales Agent Extension Suite</strong> is a guided accelerator for evaluation and pilot planning. Availability depends on the selected work moment and the evidence collected for that customer.</p><p class="policy-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms of use</a></p></div></footer></body>
-</html>
+    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .hero { padding-block: 16px; } .plain-hero { padding-block: 12px; } .plain-hero .hero-signal { display: none; } .header-inner { min-height: 0; padding-block: 10px; gap: 8px; } .brand-lockup { gap: 8px; font-size: 12px; } .brand-lockup > :not(.product-wordmark) { display: none; } .section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 4px 12px; } .section-nav a { min-height: 32px; padding: 4px 0; } .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .hero-actions a { min-width: 0; padding: 10px 8px; font-size: 14px; text-align: center; } }
+
+    .learn-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .learn-card { padding:22px; border:1px solid var(--cp-border); background:var(--cp-surface); min-width:0; }
+    .learn-card h3 { margin-top:0; }
+    .learn-card small,code { overflow-wrap:anywhere; }
+    .learn-lead { max-width:900px; padding-block:36px; }
+    .learn-note { border-left:4px solid var(--cp-warning); padding:16px; background:var(--cp-surface-soft); margin:18px 0; }
+    .demo-controls { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0; }
+    .demo-result { border:2px solid var(--cp-accent); padding:24px; margin:20px 0; }
+    .learn-table { width:100%; border-collapse:collapse; }
+    .learn-table th,.learn-table td { text-align:left; vertical-align:top; padding:12px; border-bottom:1px solid var(--cp-border); }
+    .table-wrap { overflow-x:auto; }
+    .prompt-copy { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; }
+    .learn-status { font-weight:700; min-height:28px; }
+    .learn-step { color:var(--cp-accent); font-weight:700; }
+    select { max-width:100%; padding:8px; }
+    .learn-lead { padding-block:24px; max-width:100%; }
+    .hero h1 { font-size:clamp(30px,4vw,48px); max-width:900px; margin-block:8px 12px; }
+    .hero-summary { max-width:780px; font-size:20px; }
+    .content-band { padding-block:28px; }
+    .quick-demo { border:1px solid var(--cp-border); padding:24px; background:var(--cp-surface); }
+    .quick-choices { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+    button { font:inherit; min-height:44px; padding:10px 16px; cursor:pointer; color:var(--cp-text); background:var(--cp-surface); border:1px solid var(--cp-accent); border-radius:4px; }
+    button[aria-pressed="true"] { color:var(--cp-accent-fg); background:var(--cp-accent); }
+    button:disabled { cursor:default; opacity:.65; }
+    button:focus-visible,summary:focus-visible { outline:3px solid var(--cp-accent); outline-offset:3px; }
+    .quick-result { border-left:4px solid var(--cp-accent); padding:4px 20px; margin:16px 0; }
+    .quick-result h3 { margin-top:8px; }
+    .quick-result li { margin-block:8px; }
+    .quick-prompt { padding:16px; background:var(--cp-surface-soft); }
+    details { margin-block:12px; padding:12px; border:1px solid var(--cp-border); }
+    summary { cursor:pointer; font-weight:700; min-height:32px; }
+    [hidden] { display:none !important; }
+    .site-footer { padding-block:20px; }
+    @media(max-width:800px) { .learn-grid { grid-template-columns:1fr; } }
+    @media(max-width:680px) { .quick-demo { padding:16px; } .quick-choices { display:grid; grid-template-columns:1fr; } .quick-choices button { text-align:left; } .hero-summary { font-size:18px; } .content-band { padding-block:20px; } }
+    @media(max-width:680px) {
+      .comparison thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+      .comparison tr { display:block; margin-block:16px; border:1px solid var(--cp-border); }
+      .comparison th,.comparison td { display:block; }
+      .comparison td::before { display:block; font-weight:700; margin-bottom:4px; }
+      .comparison td:nth-child(2)::before { content:"Microsoft’s starting point"; }
+      .comparison td:nth-child(3)::before { content:"Suite’s reusable pattern"; }
+    }
+    @media print { .demo-controls,button { display:none; } .learn-card { break-inside:avoid; } details > * { display:block !important; } }
+</style></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner">
+<div class="brand-lockup"><span class="product-wordmark">Sales Extension Suite for Copilot</span>
+<span class="brand-divider" aria-hidden="true"></span><span>Bill Whalen | Microsoft</span></div>
+<nav class="section-nav" aria-label="Site pages"><a href="index.html">Try it</a><a href="user-guide.html">Example prompts</a><a href="install.html">Download & install</a></nav></div></header>
+<main id="main"><section class="hero"><div class="wrap learn-lead"><h1>Terms of use</h1></div></section><section class="content-band"><div class="wrap"><h2>Terms of use</h2><p>Sales Extension Suite for Copilot: Cowork V2.1.3 evaluation packages. Updated October 16, 2026.</p>
+<p>An independent evaluation accelerator by Bill Whalen | Microsoft, not a Microsoft product entitlement, Marketplace certification, production SLA, licensing quote or universal tenant-compatibility guarantee.</p></div></section><section class="content-band"><div class="wrap"><h2>Permitted evaluation and installation</h2><p>Use only in an authorized tenant under approved policy, audience, source scope and support ownership. Administrators remain responsible for licensing, capacity, data residency, connection approval, permissions and deployment decisions.</p>
+<p>Start with the two primary Cowork plugins. Two optional specialist plugins require separate host testing. The previous seven-package layout is consolidated into these four; do not enable overlapping layouts. Copilot Studio is deferred and not included in these downloads.</p>
+<p>The packages need no custom backend and add no CRM connection or data permission. Each intended live tool path and recipient identity must be verified independently. A download or import is not authorization for wider use.</p></div></section><section class="content-band"><div class="wrap"><h2>Qualification and external effects</h2><p>Package validation proves structural checks, not business accuracy or live qualification. Owner-reported tests do not establish optional-package, recipient, customer-tenant, production or cross-provider readiness. Verify exact artifacts, selection, evidence, negative paths, effects, usage and rollback in the intended host.</p>
+<p>No conversational request bypasses approval requirements. Writes, sends, schedules, assignments, publications, purchases, deployments and destructive actions require the owning system’s controls, exact approval and a verifiable receipt.</p></div></section><section class="content-band"><div class="wrap"><h2>No warranty and removal</h2><p>The accelerator is provided for evaluation and implementation planning without warranties or guarantees. Validate all outputs before relying on them for customer, commercial, operational, safety, legal, financial or regulatory decisions.</p>
+<p>Preserve your recorded installation baseline and original ZIPs. For personal rollback, disable only the relevant suite plugins, restore the previous enabled states and start a fresh task. For shared or managed deployment, the owner/administrator reviews supported audience, revoke or block controls. Existing conversations may continue. Preserve customer-owned records and shared connections.</p></div></section></main>
+<footer class="site-footer"><div class="wrap"><p>Built by Bill Whalen | Microsoft. Independent preview accelerator; not a production or universal capability claim.</p>
+<p><strong>Website 0.14.0 · Cowork packages V2.1.3.</strong> Controlled evaluation release. Recipient access and optional-package host testing remain separate checks.</p>
+<p class="policy-links"><a href="compare.html">What this adds</a><a href="enablement.html">Release to your team</a><a href="catalog.html">All included agents</a><a href="test.html">Pilot test plan</a><a href="demo.html">Guided walkthrough</a><a href="technical-reference.html">Technical details &amp; readiness</a><a href="privacy.html">Privacy</a><a href="terms.html" aria-current="page">Terms</a></p></div></footer>
+</body></html>

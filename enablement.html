@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-style-version="0.2.0" data-theme="light">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="A plain-English guide for evaluating the Sales Agent Extension Suite with a safe scenario, useful measures, and a clear next decision."><title>Sales Agent Extension Suite Enablement Guide</title><link rel="icon" href="assets/sales-evidence-color.png">
-  <script>(() => { const param = new URLSearchParams(window.location.search).get("scoutTheme"); const theme = param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", theme); })();</script>
-  <style>html[data-visual-style="atomic-orbit"] {
+<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Sales Extension Suite for Copilot: reusable sales agents, Cowork plugins for a controlled pilot, and a deferred Copilot Studio agent.">
+<title>Release to your team | Sales Extension Suite for Copilot</title><link rel="icon" href="assets/sales-evidence-color.png">
+<style>html[data-visual-style="atomic-orbit"] {
       --cp-bg: #ffffff;
       --cp-bg-elevated: #f7faff;
       --cp-surface: #ffffff;
@@ -332,36 +333,91 @@
     .policy-copy .summary { color: var(--cp-text-muted); font-size: 19px; }
     .policy-copy h2 { margin-top: 34px; }
     .policy-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+    .guide-list { display: grid; gap: 12px; padding-left: 22px; }
+    .guide-list li { padding-left: 4px; }
+    .guide-list strong { color: var(--cp-text); }
+    .feedback-template { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
     @media (max-width: 900px) { .moment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .plain-hero .hero-signal { position: static; justify-items: start; margin-top: 20px; } }
-</style>
-</head>
-<body>  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand-lockup" aria-label="Sales Agent Extension Suite by Microsoft and SE OS">
-        <span class="product-wordmark">Sales Agent Extension Suite</span><span class="brand-divider" aria-hidden="true"></span><span>Microsoft</span><span class="brand-divider" aria-hidden="true"></span><span class="brand-mark atom-lockup"><img class="house-mark" src="assets/mcaps-se-os-house-mark.svg" width="27" height="27" alt="SE OS mark">SE OS</span>
-      </div>
-      <nav class="section-nav" aria-label="Site pages">        <a href="index.html">Overview</a>
-        <a href="enablement.html" aria-current="page">Get started</a>
-        <a href="technical-reference.html">Technical reference</a></nav>
-    </div>
-  </header>
-  <main id="main">
-    <section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner plain-hero"><div><p class="eyebrow">Evaluation and enablement</p><h1 id="page-title">Run a useful evaluation in one working session.</h1><p class="hero-summary">Use a safe example, show the team what changes in their day, measure whether it helps, and decide what should happen next. No customer system needs to change during the first review.</p><div class="hero-actions"><a class="primary" href="#start">Start the plan</a><a class="secondary" href="index.html">Return to the overview</a></div></div><div class="hero-signal"><img class="hero-icon" src="assets/sales-evidence-outline.png" width="132" height="132" alt="Sales Agent Extension Suite outline icon"></div></div></section>
-    <section class="content-band" id="start"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Before the session</p><h2>Pick one work moment people already understand.</h2></div><p class="section-summary">Meeting follow-through or opportunity preparation are good starting points. Both are familiar, easy to compare with today, and useful without giving the system permission to change anything.</p></div><div class="step-grid">          <article class="step"><h3>Choose the people</h3><p>Invite one seller, one manager or process owner, and the administrator who understands the approved information.</p></article>
-          <article class="step"><h3>Choose safe information</h3><p>Use realistic sample information or explicitly approved nonproduction records. Include one missing item and one contradiction.</p></article>
-          <article class="step"><h3>Agree on success</h3><p>Decide what a useful answer looks like, how long the current work takes, and what must never happen automatically.</p></article></div></div></section>
-    <section class="content-band" id="session"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">90-minute working session</p><h2>Show the work, test the limits, then make a decision.</h2></div><p class="section-summary">This is a working review, not a product tour. Keep the group focused on usefulness, trust, and the smallest safe next step.</p></div><ol class="install-steps"><li><strong>10 minutes: set the boundaries.</strong><br>Confirm the scenario, approved information, people in the room, and actions that remain off.</li><li><strong>25 minutes: run the scenario.</strong><br>Ask the question, open the sources, review missing information, and inspect the draft.</li><li><strong>20 minutes: test failure cases.</strong><br>Remove access, use old information, introduce a conflict, ask for an unsafe action, and confirm the experience stops clearly.</li><li><strong>20 minutes: compare with today.</strong><br>Score usefulness, evidence quality, time, and the amount of source hunting required.</li><li><strong>15 minutes: decide.</strong><br>Choose Continue, Revise, or Stop. Record the owner and evidence needed for the next step.</li></ol></div></section>
-    <section class="content-band" id="score"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Simple scorecard</p><h2>Measure usefulness and trust separately.</h2></div><p class="section-summary">A fast answer is not useful if it cannot be trusted. A well-sourced answer is not useful if it does not help someone decide or act.</p></div><div class="overview-grid">          <article class="tile"><h3>Evidence</h3><p>Can reviewers open the source for every important statement? Are missing and old items labeled?</p></article>
-          <article class="tile"><h3>Usefulness</h3><p>Does the result make the next decision clearer without more searching?</p></article>
-          <article class="tile"><h3>Time</h3><p>How long does the same work take today, and how long did the reviewed result take?</p></article>
-          <article class="tile"><h3>Control</h3><p>Did messages, meetings, sales records, forecasts, and access remain unchanged?</p></article></div></div></section>
-    <section class="content-band" id="ready"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Ready for a pilot?</p><h2>Move forward only when five answers are clear.</h2></div><p class="section-summary">A successful demo is useful evidence, but it is not permission to deploy. These decisions turn a good review into a bounded pilot.</p></div><div class="decision-row">          <article class="decision"><h3>Outcome</h3><p>Which two work moments are we testing, and who says the result is useful?</p></article>
-          <article class="decision"><h3>Information</h3><p>Which records and conversations may be used, for how long, and who owns conflicts?</p></article>
-          <article class="decision"><h3>People</h3><p>Who will review, administer, support, and make the Continue, Revise, or Stop decision?</p></article>
-          <article class="decision"><h3>Measures</h3><p>What is the current baseline for time, quality, and missing information?</p></article>
-          <article class="decision"><h3>Exit</h3><p>How will access and temporary setup be removed or handed over at the end?</p></article></div></div></section>
-    <section class="content-band" id="technical"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">For implementers</p><h2>Technical implementation is a separate review.</h2></div><p class="section-summary">Administrators and architects can review the managed solution, connector-free Cowork packages, native Dataverse connection, package validation, rollback, and exact host qualification in the technical reference.</p></div><div class="technical-note"><p><strong>Why this detail is separate:</strong> it matters for architecture and deployment, but it should not be the first thing a seller, manager, or customer sponsor must decode.</p><a class="secondary" href="technical-reference.html">Open the technical reference</a></div></div></section>
-  </main>  <footer class="site-footer"><div class="wrap"><p><strong>Sales Agent Extension Suite</strong> is a guided accelerator for evaluation and pilot planning. Availability depends on the selected work moment and the evidence collected for that customer.</p><p class="policy-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms of use</a></p></div></footer></body>
-</html>
+    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .hero { padding-block: 16px; } .plain-hero { padding-block: 12px; } .plain-hero .hero-signal { display: none; } .header-inner { min-height: 0; padding-block: 10px; gap: 8px; } .brand-lockup { gap: 8px; font-size: 12px; } .brand-lockup > :not(.product-wordmark) { display: none; } .section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 4px 12px; } .section-nav a { min-height: 32px; padding: 4px 0; } .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .hero-actions a { min-width: 0; padding: 10px 8px; font-size: 14px; text-align: center; } }
+
+    .learn-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .learn-card { padding:22px; border:1px solid var(--cp-border); background:var(--cp-surface); min-width:0; }
+    .learn-card h3 { margin-top:0; }
+    .learn-card small,code { overflow-wrap:anywhere; }
+    .learn-lead { max-width:900px; padding-block:36px; }
+    .learn-note { border-left:4px solid var(--cp-warning); padding:16px; background:var(--cp-surface-soft); margin:18px 0; }
+    .demo-controls { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0; }
+    .demo-result { border:2px solid var(--cp-accent); padding:24px; margin:20px 0; }
+    .learn-table { width:100%; border-collapse:collapse; }
+    .learn-table th,.learn-table td { text-align:left; vertical-align:top; padding:12px; border-bottom:1px solid var(--cp-border); }
+    .table-wrap { overflow-x:auto; }
+    .prompt-copy { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; }
+    .learn-status { font-weight:700; min-height:28px; }
+    .learn-step { color:var(--cp-accent); font-weight:700; }
+    select { max-width:100%; padding:8px; }
+    .learn-lead { padding-block:24px; max-width:100%; }
+    .hero h1 { font-size:clamp(30px,4vw,48px); max-width:900px; margin-block:8px 12px; }
+    .hero-summary { max-width:780px; font-size:20px; }
+    .content-band { padding-block:28px; }
+    .quick-demo { border:1px solid var(--cp-border); padding:24px; background:var(--cp-surface); }
+    .quick-choices { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+    button { font:inherit; min-height:44px; padding:10px 16px; cursor:pointer; color:var(--cp-text); background:var(--cp-surface); border:1px solid var(--cp-accent); border-radius:4px; }
+    button[aria-pressed="true"] { color:var(--cp-accent-fg); background:var(--cp-accent); }
+    button:disabled { cursor:default; opacity:.65; }
+    button:focus-visible,summary:focus-visible { outline:3px solid var(--cp-accent); outline-offset:3px; }
+    .quick-result { border-left:4px solid var(--cp-accent); padding:4px 20px; margin:16px 0; }
+    .quick-result h3 { margin-top:8px; }
+    .quick-result li { margin-block:8px; }
+    .quick-prompt { padding:16px; background:var(--cp-surface-soft); }
+    details { margin-block:12px; padding:12px; border:1px solid var(--cp-border); }
+    summary { cursor:pointer; font-weight:700; min-height:32px; }
+    [hidden] { display:none !important; }
+    .site-footer { padding-block:20px; }
+    @media(max-width:800px) { .learn-grid { grid-template-columns:1fr; } }
+    @media(max-width:680px) { .quick-demo { padding:16px; } .quick-choices { display:grid; grid-template-columns:1fr; } .quick-choices button { text-align:left; } .hero-summary { font-size:18px; } .content-band { padding-block:20px; } }
+    @media(max-width:680px) {
+      .comparison thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+      .comparison tr { display:block; margin-block:16px; border:1px solid var(--cp-border); }
+      .comparison th,.comparison td { display:block; }
+      .comparison td::before { display:block; font-weight:700; margin-bottom:4px; }
+      .comparison td:nth-child(2)::before { content:"Microsoft’s starting point"; }
+      .comparison td:nth-child(3)::before { content:"Suite’s reusable pattern"; }
+    }
+    @media print { .demo-controls,button { display:none; } .learn-card { break-inside:avoid; } details > * { display:block !important; } }
+</style></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner">
+<div class="brand-lockup"><span class="product-wordmark">Sales Extension Suite for Copilot</span>
+<span class="brand-divider" aria-hidden="true"></span><span>Bill Whalen | Microsoft</span></div>
+<nav class="section-nav" aria-label="Site pages"><a href="index.html">Try it</a><a href="user-guide.html">Example prompts</a><a href="install.html">Download & install</a></nav></div></header>
+<main id="main"><section class="hero"><div class="wrap learn-lead"><p class="eyebrow">Start small, then expand with evidence</p>
+<h1>Release to your team.</h1>
+<p class="hero-summary">Start with the two sales plugins and a named internal pilot group. Give people one task to try—not the whole catalog to learn.</p>
+<div class="hero-actions"><a class="primary" href="#named-pilot">Share with a few colleagues</a><a class="secondary" href="install.html#downloads">Get V2.1.3</a></div>
+<p>A website download, a shared Cowork plugin, and an administrator deployment are different release steps. None grants CRM access.</p></div></section><section class="content-band"><div class="wrap"><h2>1. Confirm the exact release</h2><ul>
+<li>Start with Seller Workflows and Account &amp; Deals only. Keep optional V-Team Service and Admin Support out of the general seller launch.</li>
+<li>The owner reports successful testing. Record the tested version/scope and check final V2.1.3 import, displayed names and one notes-only rehearsal after the metadata cleanup.</li>
+<li>Keep a pilot owner, exact ZIP hashes, supported source scope, known limitations, minimal test evidence and rollback route in approved internal storage.</li>
+<li>Agree the named participants, permitted sharing channel and support contact before sharing. Stop if policy, entitlement or effective data access is missing.</li></ul>
+<p><a href="downloads/package-checksums.csv" download="package-checksums.csv">Download final package checksums</a> · <a href="test.html">Run or repeat the acceptance tests</a>.</p></div></section><section class="content-band" id="named-pilot"><div class="wrap"><h2>2. Share inside your organization</h2><ol class="guide-list">
+<li><strong>Open Cowork → Customize → Plugins.</strong> Open the detail page for each of the two plugins you uploaded. First verify the version and displayed name.</li>
+<li><strong>Select Share.</strong> Choose <strong>Specific users in your organization</strong>; add only the approved participants by name or email. Check the recipients, then select <strong>Apply</strong>.</li>
+<li><strong>Copy each plugin link from the Share dialog.</strong> These are the recipient-use links. Do not send a local Downloads path or assume the website installs anything.</li>
+<li><strong>Send both links through the approved internal channel.</strong> Include the getting-started page, a notes-only prompt, pilot owner/support contact and the request below. Sending is a separate decision from sharing.</li>
+<li><strong>Test as a recipient.</strong> They check the shared plugin detail/Add controls available to them, enable it in Sources &amp; Skills, and start a fresh task. They run the four synthetic sales scenarios before separately authorized live-data tests. Record T11 using their own identity.</li></ol>
+<p><strong>If Share is missing or blocked:</strong> stop and ask the tenant administrator. If approved, participants may instead upload the exact ZIPs themselves following the <a href="install.html">personal install guide</a>. Do not bypass policy or share credentials.</p>
+<p>When changing an already shared plugin, Microsoft documents <strong>Re-share</strong> to send the latest version to its recipients. Review the changed bytes and recipient list first; do not assume a renamed ZIP updates installed copies.</p></div></section><section class="content-band"><div class="wrap"><h2>3. Give the pilot one clear job</h2><p>Suggested internal invitation—fill in the links and support contact before sending:</p>
+<blockquote><p>Try Sales Extension Suite for Copilot in Cowork. It adds reusable team routines for account briefs, meeting follow-up, deal coaching and handoffs alongside Microsoft’s standard Sales plugin.</p>
+<p>Start with these two shared plugins: [Seller Workflows link] and [Account &amp; Deals link]. Follow [getting-started link], then try one fictional example. Please tell us whether the answer is useful, what you corrected and anything that blocked you. Review drafts before acting; do not use live customer data until your access and scope are approved. Support: [pilot owner/contact].</p></blockquote>
+<p>This is a draft, not a sent message. Do not include private customer evidence in public feedback. Record usefulness, corrections and time observed; no ROI claim is established yet.</p></div></section><section class="content-band"><div class="wrap"><h2>4. Expand only after recipient success</h2><details><summary>Administrator-managed rollout to a larger internal group</summary>
+<p>Ask the tenant/Copilot administrator to review the plugin through the organization’s supported custom-app submission process. Uploading privately or sharing with named people is not organization-wide approval.</p>
+<p>Once the plugin is available to the administrator, Microsoft documents Microsoft 365 admin center → <strong>Agents → All agents or Tools</strong> → select the plugin → <strong>Installed for → Specific users/groups</strong> → Next/install. Begin with an approved pilot group, not All users. Exact availability depends on tenant policy and rollout.</p>
+<p>Org-wide publication requests need administrator approval. Managed deployments cannot be removed by recipients; they can disable them for conversations. The administrator owns deployment rollback, blocking and audience changes. Blocking takes effect for new conversations; already-running conversations may continue.</p></details>
+<details><summary>Customer reuse is a separate release</summary><p>Same-organization sharing does not establish cross-tenant distribution. A customer needs its own approved package-delivery route, tenant availability, licenses, administrator review, effective identities, data scope, scenarios, support owner and rollback. Do not copy internal evidence or offer these ZIPs as proof of universal CRM compatibility. Keep customer-specific content out of a public download site.</p></details>
+<details><summary>Rollback and support</summary><p>For a personal pilot, disable only the suite plugins involved, restore recorded prior enabled states and start a fresh task. Preserve original packages and connections. For named sharing or managed deployment, have the owner/administrator review the audience and supported revoke/block controls. Do not promise immediate revocation of existing conversations.</p><p>Send the pilot owner the package version/hash, host/build, minimal error and expected versus observed result through an approved internal channel. Never paste tokens or raw customer records into a public issue.</p></details></div></section><section class="content-band"><div class="wrap"><h2>Website publication is not plugin deployment</h2><p>A public website makes the overview and download ZIPs available on the internet. It does not install plugins, share them in Cowork, approve tenant access or send an invitation. Those actions need their own approved audience and supported process.</p>
+<p>Use the approved internal distribution route for private evaluation. A local preview link works only on the author’s computer; a public download is not a recipient’s Cowork plugin link.</p>
+<p>Microsoft instructions checked October 16, 2026: <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-customize">Customize, upload and share</a> · <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins">Administrator deployment and governance</a>.</p></div></section></main>
+<footer class="site-footer"><div class="wrap"><p>Built by Bill Whalen | Microsoft. Independent preview accelerator; not a production or universal capability claim.</p>
+<p><strong>Website 0.14.0 · Cowork packages V2.1.3.</strong> Controlled evaluation release. Recipient access and optional-package host testing remain separate checks.</p>
+<p class="policy-links"><a href="compare.html">What this adds</a><a href="enablement.html" aria-current="page">Release to your team</a><a href="catalog.html">All included agents</a><a href="test.html">Pilot test plan</a><a href="demo.html">Guided walkthrough</a><a href="technical-reference.html">Technical details &amp; readiness</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p></div></footer>
+</body></html>
