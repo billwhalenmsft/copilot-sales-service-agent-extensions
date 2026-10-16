@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-style-version="0.2.0" data-theme="light">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="Help sellers prepare, follow up, and move work forward with less administration across Microsoft 365 Copilot, Sales Agent, and Cowork."><title>Sales Agent Extension Suite</title><link rel="icon" href="assets/sales-evidence-color.png">
-  <script>(() => { const param = new URLSearchParams(window.location.search).get("scoutTheme"); const theme = param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", theme); })();</script>
-  <style>html[data-visual-style="atomic-orbit"] {
+<html lang="en" class="project-hub" data-visual-style="atomic-orbit" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Sales Extension Suite for Copilot: reusable sales agents, Cowork plugins for a controlled pilot, and a deferred Copilot Studio agent.">
+<title>Prepare, follow up, coach | Sales Extension Suite for Copilot</title><link rel="icon" href="assets/sales-evidence-color.png">
+<style>html[data-visual-style="atomic-orbit"] {
       --cp-bg: #ffffff;
       --cp-bg-elevated: #f7faff;
       --cp-surface: #ffffff;
@@ -332,41 +333,94 @@
     .policy-copy .summary { color: var(--cp-text-muted); font-size: 19px; }
     .policy-copy h2 { margin-top: 34px; }
     .policy-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+    .guide-list { display: grid; gap: 12px; padding-left: 22px; }
+    .guide-list li { padding-left: 4px; }
+    .guide-list strong { color: var(--cp-text); }
+    .feedback-template { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
     @media (max-width: 900px) { .moment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .plain-hero .hero-signal { position: static; justify-items: start; margin-top: 20px; } }
-</style>
-</head>
-<body>  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand-lockup" aria-label="Sales Agent Extension Suite by Microsoft and SE OS">
-        <span class="product-wordmark">Sales Agent Extension Suite</span><span class="brand-divider" aria-hidden="true"></span><span>Microsoft</span><span class="brand-divider" aria-hidden="true"></span><span class="brand-mark atom-lockup"><img class="house-mark" src="assets/mcaps-se-os-house-mark.svg" width="27" height="27" alt="SE OS mark">SE OS</span>
-      </div>
-      <nav class="section-nav" aria-label="Site pages">        <a href="index.html" aria-current="page">Overview</a>
-        <a href="enablement.html">Get started</a>
-        <a href="technical-reference.html">Technical reference</a></nav>
-    </div>
-  </header>
-  <main id="main">
-    <section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner plain-hero"><div><p class="eyebrow">Sales Agent Extension Suite</p><h1 id="page-title">Help sellers prepare, follow up, and move work forward with less admin.</h1><p class="hero-summary">Bring customer context, meetings, and sales work into Copilot Studio or Copilot Cowork. V1 packages 137 governed workflow references without requiring a customer-managed backend; one bounded sales-data tool is implemented, and every additional live data path still requires pilot proof.</p><div class="hero-meta"><span>Eight directly installable artifacts</span><span>One implemented read-only data tool</span><span>No silent changes</span></div><div class="hero-actions"><a class="primary" href="#outcomes">See what it helps with</a><a class="secondary" href="enablement.html">Plan an evaluation</a></div></div><div class="hero-signal"><img class="hero-icon" src="assets/sales-evidence-color.png" width="132" height="132" alt="Sales Agent Extension Suite icon"></div></div></section>
-    <section class="content-band" id="outcomes"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Everyday work</p><h2>Give the team time back without losing control.</h2></div><p class="section-summary">Start with the work people already do: prepare for a customer conversation, understand what needs attention, turn a meeting into follow-through, and review the business with evidence.</p></div><div class="moment-grid">          <article class="moment"><h3>Prepare faster</h3><p>Pull together the customer, opportunity, recent conversations, open work, and missing information before a meeting.</p></article>
-          <article class="moment"><h3>Know the next move</h3><p>Separate what is known from what is missing, then suggest the shortest useful next step for review.</p></article>
-          <article class="moment"><h3>Follow through</h3><p>Turn reviewed meeting notes into decisions, action proposals, and a customer-ready draft without sending anything automatically.</p></article>
-          <article class="moment"><h3>Manage with facts</h3><p>See movement, risk, stale information, and coaching questions without changing the forecast or scoring employees.</p></article></div></div></section>
-    <section class="content-band" id="people"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Value by role</p><h2>One shared picture, shaped for each role.</h2></div><p class="section-summary">The suite uses the same customer evidence across the team, while each person sees the work that matters to them.</p></div><div class="overview-grid">          <article class="tile"><h3>Sellers</h3><p>Start prepared, spend less time hunting for information, and leave every meeting with clear follow-through.</p></article>
-          <article class="tile"><h3>Managers</h3><p>Review pipeline and coaching priorities from current evidence instead of assembling another report.</p></article>
-          <article class="tile"><h3>Account teams</h3><p>Share one customer picture across sales, service, specialists, and customer success.</p></article>
-          <article class="tile"><h3>Sales operations</h3><p>Introduce new work in small steps, see what changed, and stop or remove it cleanly when needed.</p></article></div></div></section>
-    <section class="content-band" id="journey"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">How it works</p><h2>Ask. Review. Approve.</h2></div><p class="section-summary">People stay in control. The suite can read approved information and prepare drafts. Important changes wait for a clear review and approval step.</p></div><div class="step-grid">          <article class="step"><h3>Ask in the Microsoft experience you use</h3><p>Start in Microsoft 365 Copilot, Sales Agent, or Cowork with a customer or work item you are allowed to use.</p></article>
-          <article class="step"><h3>Review the answer and its sources</h3><p>Important statements point back to their source. Missing, old, or conflicting information stays visible.</p></article>
-          <article class="step"><h3>Approve only what should happen</h3><p>Drafts remain drafts. When a future action is enabled, the person sees the exact proposed change first.</p></article></div></div></section>
-    <section class="content-band" id="try"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Four starting points</p><h2>Use questions that sound like real work.</h2></div><p class="section-summary">These examples show the experience we are building toward. Each customer decides which information, rules, and actions are appropriate.</p></div><div class="grid">          <article class="prompt-card"><h3>Start my day</h3><blockquote>What needs my attention today, and why?</blockquote></article>
-          <article class="prompt-card"><h3>Review an opportunity</h3><blockquote>What do we know, what is missing, and what is the next supported move?</blockquote></article>
-          <article class="prompt-card"><h3>Follow up after a meeting</h3><blockquote>Summarize the decisions, propose the actions, and draft the follow-up for my review.</blockquote></article>
-          <article class="prompt-card"><h3>Prepare for a manager review</h3><blockquote>What changed, where is the evidence weak, and what should we discuss?</blockquote></article></div></div></section>
-    <section class="content-band" id="proof"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">What is available today</p><h2>Installable V1, proved in steps.</h2></div><p class="section-summary">The managed Copilot Studio solution has passed clean import, built-in sales-data connection, publish, and synchronization checks. All seven Cowork packages pass 413 of 413 package checks. Live behavior still advances one workflow and one customer-approved data path at a time.</p></div><div class="decision-row">          <article class="decision"><h3>Proven pattern</h3><p>A seller can receive a current, source-backed next-step draft in Sales Agent.</p></article>
-          <article class="decision"><h3>Ready to install</h3><p>Choose one managed Copilot Studio solution or seven connector-free Cowork packages; neither requires a custom backend.</p></article>
-          <article class="decision"><h3>Still customer-specific</h3><p>Each customer must approve its information, rules, users, environment, and operating plan before live use.</p></article></div><div class="notice"><p><strong>Important:</strong> Packaging 137 workflows does not mean all 137 are live-data-qualified. The suite does not send messages, schedule meetings, update sales records, change forecasts, or deploy itself without a separate approved path.</p></div></div></section>
-    <section class="content-band" id="next"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Next step</p><h2>Choose one useful work moment and prove it safely.</h2></div><p class="section-summary">A good evaluation starts small: one role, one customer-safe scenario, one agreed measure, and a clear decision to continue, revise, or stop.</p></div><div class="hero-actions"><a class="primary" href="enablement.html">Open the enablement guide</a><a class="secondary" href="technical-reference.html">Open the technical reference</a></div></div></section>
-  </main>  <footer class="site-footer"><div class="wrap"><p><strong>Sales Agent Extension Suite</strong> is a guided accelerator for evaluation and pilot planning. Availability depends on the selected work moment and the evidence collected for that customer.</p><p class="policy-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms of use</a></p></div></footer></body>
-</html>
+    @media (max-width: 680px) { .plain-hero, .moment-grid, .step-grid, .decision-row { grid-template-columns: 1fr; } .hero { padding-block: 16px; } .plain-hero { padding-block: 12px; } .plain-hero .hero-signal { display: none; } .header-inner { min-height: 0; padding-block: 10px; gap: 8px; } .brand-lockup { gap: 8px; font-size: 12px; } .brand-lockup > :not(.product-wordmark) { display: none; } .section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 4px 12px; } .section-nav a { min-height: 32px; padding: 4px 0; } .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .hero-actions a { min-width: 0; padding: 10px 8px; font-size: 14px; text-align: center; } }
+
+    .learn-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .learn-card { padding:22px; border:1px solid var(--cp-border); background:var(--cp-surface); min-width:0; }
+    .learn-card h3 { margin-top:0; }
+    .learn-card small,code { overflow-wrap:anywhere; }
+    .learn-lead { max-width:900px; padding-block:36px; }
+    .learn-note { border-left:4px solid var(--cp-warning); padding:16px; background:var(--cp-surface-soft); margin:18px 0; }
+    .demo-controls { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0; }
+    .demo-result { border:2px solid var(--cp-accent); padding:24px; margin:20px 0; }
+    .learn-table { width:100%; border-collapse:collapse; }
+    .learn-table th,.learn-table td { text-align:left; vertical-align:top; padding:12px; border-bottom:1px solid var(--cp-border); }
+    .table-wrap { overflow-x:auto; }
+    .prompt-copy { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; }
+    .learn-status { font-weight:700; min-height:28px; }
+    .learn-step { color:var(--cp-accent); font-weight:700; }
+    select { max-width:100%; padding:8px; }
+    .learn-lead { padding-block:24px; max-width:100%; }
+    .hero h1 { font-size:clamp(30px,4vw,48px); max-width:900px; margin-block:8px 12px; }
+    .hero-summary { max-width:780px; font-size:20px; }
+    .content-band { padding-block:28px; }
+    .quick-demo { border:1px solid var(--cp-border); padding:24px; background:var(--cp-surface); }
+    .quick-choices { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+    button { font:inherit; min-height:44px; padding:10px 16px; cursor:pointer; color:var(--cp-text); background:var(--cp-surface); border:1px solid var(--cp-accent); border-radius:4px; }
+    button[aria-pressed="true"] { color:var(--cp-accent-fg); background:var(--cp-accent); }
+    button:disabled { cursor:default; opacity:.65; }
+    button:focus-visible,summary:focus-visible { outline:3px solid var(--cp-accent); outline-offset:3px; }
+    .quick-result { border-left:4px solid var(--cp-accent); padding:4px 20px; margin:16px 0; }
+    .quick-result h3 { margin-top:8px; }
+    .quick-result li { margin-block:8px; }
+    .quick-prompt { padding:16px; background:var(--cp-surface-soft); }
+    details { margin-block:12px; padding:12px; border:1px solid var(--cp-border); }
+    summary { cursor:pointer; font-weight:700; min-height:32px; }
+    [hidden] { display:none !important; }
+    .site-footer { padding-block:20px; }
+    @media(max-width:800px) { .learn-grid { grid-template-columns:1fr; } }
+    @media(max-width:680px) { .quick-demo { padding:16px; } .quick-choices { display:grid; grid-template-columns:1fr; } .quick-choices button { text-align:left; } .hero-summary { font-size:18px; } .content-band { padding-block:20px; } }
+    @media(max-width:680px) {
+      .comparison thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+      .comparison tr { display:block; margin-block:16px; border:1px solid var(--cp-border); }
+      .comparison th,.comparison td { display:block; }
+      .comparison td::before { display:block; font-weight:700; margin-bottom:4px; }
+      .comparison td:nth-child(2)::before { content:"Microsoft’s starting point"; }
+      .comparison td:nth-child(3)::before { content:"Suite’s reusable pattern"; }
+    }
+    @media print { .demo-controls,button { display:none; } .learn-card { break-inside:avoid; } details > * { display:block !important; } }
+</style></head>
+<body><a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner">
+<div class="brand-lockup"><span class="product-wordmark">Sales Extension Suite for Copilot</span>
+<span class="brand-divider" aria-hidden="true"></span><span>Bill Whalen | Microsoft</span></div>
+<nav class="section-nav" aria-label="Site pages"><a href="index.html" aria-current="page">Try it</a><a href="user-guide.html">Example prompts</a><a href="install.html">Download & install</a></nav></div></header>
+<main id="main"><section class="hero"><div class="wrap learn-lead">
+<p class="eyebrow">For sellers, sales leaders, and account teams</p>
+<h1>Add practical sales agents to Cowork.</h1>
+<p class="hero-summary">Get account briefs, meeting follow-up, deal coaching, and team handoffs inside Microsoft 365 Copilot Cowork.</p>
+<p>Two plugins for shared routines. Keep Microsoft’s Sales plugin.</p>
+<div class="hero-actions"><a class="primary" href="install.html#downloads">Download &amp; install the plugins</a><a class="secondary" href="#try">Try an example first</a></div>
+<p>Pilot only. Requires Cowork access and organization approval.</p>
+</div></section><section class="content-band" id="try"><div class="wrap"><h2>Try it now</h2><div class="quick-demo">
+<p><strong>Fictional examples. No AI runs, sign-in, or customer data.</strong> Choose a task to see a sample result.</p>
+<div class="quick-choices" role="group" aria-label="Choose a sales example">
+<button type="button" data-example="brief" aria-pressed="false" aria-controls="quick-result">1. Understand an account</button>
+<button type="button" data-example="followup" aria-pressed="false" aria-controls="quick-result">2. Follow up on a meeting</button>
+<button type="button" data-example="coach" aria-pressed="false" aria-controls="quick-result">3. Coach a deal</button>
+<button type="button" data-example="handoff" aria-pressed="false" aria-controls="quick-result">4. Bring in the right teammate</button></div>
+<div id="quick-result" class="quick-result" tabindex="-1" aria-labelledby="quick-title">
+<h3 id="quick-title">What would you like help with?</h3><p>Choose an example above. No information leaves this page.</p></div>
+<div id="quick-input" hidden><details><summary>See the fictional input</summary><p id="quick-notes"></p></details></div>
+<div id="quick-prompt-panel" class="quick-prompt" hidden><h3>Try this in your approved Cowork pilot</h3>
+<p>Copy the prompt; replace nothing for this synthetic rehearsal. Copying does not run an agent.</p>
+<button id="quick-copy" type="button">Copy this prompt</button>
+<details><summary>Read the prompt before copying</summary><pre class="prompt-copy" id="quick-prompt"></pre></details>
+<p id="quick-copy-status" role="status" aria-live="polite"></p></div>
+<noscript>The examples need JavaScript. <a href="user-guide.html">Read the sample prompts instead</a>.</noscript>
+</div></div></section><section class="content-band"><div class="wrap"><h2>What your team gets</h2><div class="learn-grid"><article class="learn-card"><h3>Seller Workflows</h3><p>Prepare for meetings, draft follow-up, and support pipeline reviews and coaching.</p></article><article class="learn-card"><h3>Account &amp; Deals</h3><p>Account Intelligence: bring together permitted account and opportunity evidence, show gaps, and prepare a useful team handoff.</p></article><article class="learn-card"><h3>Your review stays central</h3><p>Use supplied notes or approved sources. Nothing here grants access or sends messages. Check evidence before acting.</p></article></div></div></section><section class="content-band" id="adds"><div class="wrap"><h2>What this adds to the standard Sales plugin</h2><p><strong>Keep Microsoft’s Sales plugin. Add a repeatable way of working.</strong>
+The standard Sales plugin already supports deal analysis, proposals, engagement strategy, and multi-step work in Cowork. Meeting prep and pipeline analysis are not unique to this suite.</p>
+<div class="learn-grid"><article class="learn-card"><h3>A consistent account brief</h3><p>Request the bottom line, dated evidence, unknowns, and one next action in the same reviewable format.</p></article><article class="learn-card"><h3>Follow-through with dependencies</h3><p>Separate agreed actions from proposals; keep security review, data-use approval, and parallel work distinct.</p></article><article class="learn-card"><h3>A handoff someone can accept</h3><p>Give the receiving role a specific question, prerequisite, and clear finish line—not just another summary.</p></article></div>
+<p>These are packaged instructions and rehearsals—not new CRM access, exclusive AI abilities, or stronger security controls.</p>
+<p><a href="compare.html">Compare with the standard Sales plugin and see when to use each</a>.</p></div></section><section class="content-band"><div class="wrap"><h2>Bring it to your team</h2><p>V2.1.3 has final package names. Owner testing passed as reported; the final-name import check and each recipient’s access still need verification.</p>
+<div class="hero-actions"><a class="primary" href="install.html#downloads">Download &amp; install the plugins</a><a class="secondary" href="user-guide.html">See example prompts</a></div>
+<p><a href="enablement.html">Release to a small internal group</a> · <a href="catalog.html">Browse all included agents</a>. Optional service/admin packages are separate. Copilot Studio is deferred.</p></div></section></main>
+<footer class="site-footer"><div class="wrap"><p>Built by Bill Whalen | Microsoft. Independent preview accelerator; not a production or universal capability claim.</p>
+<p><strong>Website 0.14.0 · Cowork packages V2.1.3.</strong> Controlled evaluation release. Recipient access and optional-package host testing remain separate checks.</p>
+<p class="policy-links"><a href="compare.html">What this adds</a><a href="enablement.html">Release to your team</a><a href="catalog.html">All included agents</a><a href="test.html">Pilot test plan</a><a href="demo.html">Guided walkthrough</a><a href="technical-reference.html">Technical details &amp; readiness</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p></div></footer>
+<script src="demo.js"></script></body></html>

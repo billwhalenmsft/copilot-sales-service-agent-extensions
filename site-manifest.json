@@ -1,55 +1,101 @@
 {
-  "schema": "PRODUCT_SITE_MANIFEST/1",
-  "packageVersion": "0.7.0",
-  "product": {
-    "name": "Sales Agent Extension Suite",
-    "slug": "copilot-sales-service-agent-extensions",
-    "currentRelease": "Sales Agent Extension Suite 1.0.0 customer-installable candidate"
+  "schema": "SALES_SUITE_LEARNING_PREVIEW/1",
+  "version": "0.14.0",
+  "product_name": "Sales Extension Suite for Copilot",
+  "delivery_paths": {
+    "cowork": "2.1.3-owner-controlled-testing",
+    "copilot_studio": "DEFERRED",
+    "future_plugins": "not-committed"
   },
-  "purpose": "Plain-English product overview, practical evaluation guide, and separate technical reference for the Sales Agent Extension Suite.",
-  "audience": "Customers, partners, sellers, managers, account teams, solution engineers, administrators, and architects evaluating a bounded pilot.",
-  "classification": "customer-viewable",
-  "languageStandard": "docs/se-os/HUMAN-LANGUAGE-PUBLIC-CONTENT.md",
-  "skin": {
-    "id": "orbital",
-    "atomicStandardVersion": "0.2.0",
-    "tokenSha256": "75b20d8ce230a4e4ef6db115f3f0a0757ab2d379b51b6effd886c22acdcda996",
-    "shellSha256": "07662a49c939859a62bca46708889c0af0cdc3a97015c6900b3c812642274a79"
+  "acceptance": {
+    "cases": 12,
+    "primary_discovery_rows": 112,
+    "optional_discovery_rows": 25,
+    "host_tests": "OWNER_REPORTED_PASS_TESTED_VERSION_UNCONFIRMED",
+    "blank_result_sheets": "NOT_RUN",
+    "participant_handoff": "FINAL_IMPORT_AND_RECIPIENT_VERIFICATION_PENDING"
   },
-  "gate": {
-    "type": "none"
+  "status": "local-review-candidate",
+  "audience": "Sales reps, Sales leaders, account teams, SEs, and administrators",
+  "classification": "local-pilot-with-packages-review-required",
+  "publication_authorized": false,
+  "intended_existing_site": "https://billwhalenmsft.github.io/copilot-sales-service-agent-extensions/",
+  "supersedes_internal_draft": false,
+  "demo": {
+    "type": "deterministic-simulation",
+    "home_examples": 4,
+    "agent_runs": 0,
+    "network_calls": 0,
+    "persistent_storage": false
   },
-  "public": false,
-  "status": "local-validated-candidate",
-  "plannedDestination": {
-    "repository": "billwhalenmsft/copilot-sales-service-agent-extensions",
-    "url": "https://billwhalenmsft.github.io/copilot-sales-service-agent-extensions/"
+  "cowork_version": "2.1.3",
+  "install": {
+    "packages": [
+      "sales-suite-seller-workflows-2.1.3.zip",
+      "sales-suite-account-deals-2.1.3.zip"
+    ],
+    "optional_packages": [
+      "sales-suite-vteam-service-2.1.3.zip",
+      "sales-suite-admin-support-2.1.3.zip"
+    ],
+    "package_hashes": {
+      "sales-suite-seller-workflows-2.1.3.zip": "3546bb11604e18706f34cc30a3a97e62210d4aaf059296d7e83c6f6853e19da8",
+      "sales-suite-account-deals-2.1.3.zip": "71a18e328c34ca0fca63eaea3646f440d25586232715edad0f972ba47015597f",
+      "sales-suite-vteam-service-2.1.3.zip": "2e5b74a7df2dc28f9f2117f60906a196de8a7639049ad347a96e2f1272b37505",
+      "sales-suite-admin-support-2.1.3.zip": "d4febc868d4c26083537cbfdc2d40b262db80bb89db89f74211a349d813577c2"
+    },
+    "host": "Microsoft 365 Copilot Cowork",
+    "scope": "approved-personal-pilot",
+    "host_qualification": "OWNER_REPORTED_PRIMARY_PASS_FINAL_METADATA_IMPORT_PENDING",
+    "optional_host_qualification": "NOT_VERIFIED",
+    "public_distribution_authorized": false
   },
-  "generatedFiles": [
-    "README.md",
-    "enablement.html",
-    "index.html",
-    "privacy.html",
-    "robots.txt",
-    "site-manifest.json",
-    "technical-reference.html",
-    "terms.html",
-    "assets/mcaps-se-os-house-mark.svg",
-    "assets/sales-evidence-color.png",
-    "assets/sales-evidence-outline.png"
+  "release_focus": [
+    "Jenna internal pilot",
+    "Rapid customer reuse after internal gate"
   ],
-  "referencedAssets": [
-    "assets/mcaps-se-os-house-mark.svg",
-    "assets/sales-evidence-color.png",
-    "assets/sales-evidence-outline.png"
+  "later_enhancements": [
+    "Business Applications in Work IQ preview evaluation only when a measured core gap warrants it"
   ],
-  "networkDependencies": [],
-  "officialExternalReferences": [
-    "https://learn.microsoft.com/microsoft-sales-copilot/extend-sales-chat-custom-tools",
-    "https://learn.microsoft.com/microsoft-365/copilot/copilot-agent-install",
-    "https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-declarative-agent",
-    "https://learn.microsoft.com/microsoft-365/copilot/extensibility/overview-plugins",
-    "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-plugin-development",
-    "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-manage-plugins"
-  ]
+  "official_sources": {
+    "customize-and-share": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-customize",
+    "admin-deployment": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins",
+    "sales-in-cowork": "https://learn.microsoft.com/en-us/dynamics365/sales/use-copilot-cowork-sales-skills",
+    "sales-agent-versus-cowork": "https://learn.microsoft.com/en-us/dynamics365/sales/faqs-sales-agent",
+    "business-applications": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/business-applications-work-iq",
+    "business-skills": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-business-skill-overview",
+    "semantic-model": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/semantic-model-overview"
+  },
+  "style": {
+    "source": "existing-authorized-product-site-inline-CSS",
+    "redesign": true,
+    "exception": "Existing product-site colors retained with a shorter try-first layout; this is not a customer-specific hub or internal SPA."
+  },
+  "external_effects": 0,
+  "files": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assets/sales-evidence-color.png": "bf0521afa8a8b0be6080e9e59fab4ea57f70981dc2d1588c4fd407db3416d677",
+    "catalog.html": "d135feea383034215673f6b25f3835620c1b899699d56c571960304a6e313a94",
+    "compare.html": "1d84570d04a6a46a2026f74dfb4d59ca942610bb29ab10b3c80d9b20773ce2f0",
+    "demo.html": "69758f2a376e8d4b5cb6ec958e5ae2cb6b5378612a29a8d8116bdbd8a1ed4640",
+    "demo.js": "b65b96bee9a3cc0e157bc0277c55bcda381af40b33ae30426e8c68409f469b2a",
+    "downloads/optional-workflow-tests.csv": "588c25a167b1b94159c448cf90094ba95c88c575306ad8fb81809bd36a45fb63",
+    "downloads/package-checksums.csv": "bf1a3a12481f2f34384486712fa3272be6d4ebeba1062be774d5ed0950263b78",
+    "downloads/pilot-results.csv": "82e4b1d334af79088833f659d4ce70035a727bf487969c93c32ed81ac10bd39b",
+    "downloads/primary-workflow-tests.csv": "9a2d085885e46f227992115b110d6ab16af49c2251df85bf6669b830ce23e7b5",
+    "downloads/sales-suite-account-deals-2.1.3.zip": "71a18e328c34ca0fca63eaea3646f440d25586232715edad0f972ba47015597f",
+    "downloads/sales-suite-admin-support-2.1.3.zip": "d4febc868d4c26083537cbfdc2d40b262db80bb89db89f74211a349d813577c2",
+    "downloads/sales-suite-seller-workflows-2.1.3.zip": "3546bb11604e18706f34cc30a3a97e62210d4aaf059296d7e83c6f6853e19da8",
+    "downloads/sales-suite-vteam-service-2.1.3.zip": "2e5b74a7df2dc28f9f2117f60906a196de8a7639049ad347a96e2f1272b37505",
+    "enablement.html": "2b6ee8570d029adf7c0ced6b2f0d6e167a7fa46ec2ba768475585c464d79ad4f",
+    "index.html": "7a8140818e8a5f42e8a218fac95ea4b74cc35a3907423582e02b3b8019329355",
+    "install.html": "50cd48232d9205b3f2afab48ff853767655b94082d36e34c8e54f8fb4fd239bf",
+    "privacy.html": "263ecbdd0a05b723255ce3527f53eba47d11ad85748e84899a8a12cdd0474bdd",
+    "README.md": "12fa33b662c3ea3ce9ca3cc8c206ce6ab65474c545b17daf263141efb2cb51a6",
+    "robots.txt": "a8f31103361fca68bef71fc69cff844b7c23bd3d64d2b872d74690cbda656bfc",
+    "technical-reference.html": "a5b9c28bd9ffd6a7ed89b442a48360492dd363e8e6cfa4a0d3f507b343ed9ef9",
+    "terms.html": "1201151d029b5ca4b0d750def6a31f047993b69776093d4792ae42cdb7fa53a7",
+    "test.html": "28f3819e845f251b7431331637f2d049b76d75d8b822e6428fa5cead5537bbf8",
+    "user-guide.html": "a4bc45e4ab233febbda642a2be83f337a238de51c3cc8cedbab4678e115e171b"
+  }
 }
